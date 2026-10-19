@@ -64,11 +64,11 @@ export const FeaturedProductsSection: React.FC = () => {
     {
       id: 'carousel-spray-aura',
       name: 'Energy Spray: Aura Cleansing',
-      category: 'Energy Sprays – 100 ml',
-      priceDisplay: '₹1,111',
+      category: 'Energy Sprays (10 ml)',
+      priceDisplay: 'Starts at ₹1,111',
       priceNum: 1111,
       tagline: 'Clears accumulated emotional fatigue',
-      badge: '₹1,111',
+      badge: 'Starts at ₹1,111',
       image: getAssetUrl('/images/products/energy-sprays-100ml.jpg'),
       productRef: PRODUCTS[2],
       selectedOption: 'Aura Cleansing'
@@ -76,11 +76,11 @@ export const FeaturedProductsSection: React.FC = () => {
     {
       id: 'carousel-spray-protection',
       name: 'Energy Spray: Protection',
-      category: 'Energy Sprays – 100 ml',
-      priceDisplay: '₹1,111',
+      category: 'Energy Sprays (10 ml)',
+      priceDisplay: 'Starts at ₹1,111',
       priceNum: 1111,
       tagline: 'Etheric boundary shielding',
-      badge: '₹1,111',
+      badge: 'Starts at ₹1,111',
       image: getAssetUrl('/images/products/energy-sprays-100ml.jpg'),
       productRef: PRODUCTS[2],
       selectedOption: 'Protection'
@@ -88,11 +88,11 @@ export const FeaturedProductsSection: React.FC = () => {
     {
       id: 'carousel-spray-abundance',
       name: 'Energy Spray: Prosperity & Abundance',
-      category: 'Energy Sprays – 100 ml',
-      priceDisplay: '₹1,111',
+      category: 'Energy Sprays (10 ml)',
+      priceDisplay: 'Starts at ₹1,111',
       priceNum: 1111,
       tagline: 'Opens channels for wealth & abundance',
-      badge: 'Top Selling',
+      badge: 'Top Selling • Starts ₹1,111',
       image: getAssetUrl('/images/products/energy-sprays-100ml.jpg'),
       productRef: PRODUCTS[2],
       selectedOption: 'Abundance'
@@ -100,11 +100,11 @@ export const FeaturedProductsSection: React.FC = () => {
     {
       id: 'carousel-spray-love',
       name: 'Energy Spray: Love',
-      category: 'Energy Sprays – 100 ml',
-      priceDisplay: '₹1,111',
+      category: 'Energy Sprays (10 ml)',
+      priceDisplay: 'Starts at ₹1,111',
       priceNum: 1111,
       tagline: 'Heart chakra opening & harmony',
-      badge: '₹1,111',
+      badge: 'Starts at ₹1,111',
       image: getAssetUrl('/images/products/energy-sprays-100ml.jpg'),
       productRef: PRODUCTS[2],
       selectedOption: 'Love'
@@ -112,11 +112,11 @@ export const FeaturedProductsSection: React.FC = () => {
     {
       id: 'carousel-spray-road-opener',
       name: 'Energy Spray: Road Opener',
-      category: 'Energy Sprays – 100 ml',
-      priceDisplay: '₹1,111',
+      category: 'Energy Sprays (10 ml)',
+      priceDisplay: 'Starts at ₹1,111',
       priceNum: 1111,
       tagline: 'Dissolves stagnation & blockages',
-      badge: '₹1,111',
+      badge: 'Starts at ₹1,111',
       image: getAssetUrl('/images/products/energy-sprays-100ml.jpg'),
       productRef: PRODUCTS[2],
       selectedOption: 'Road Opener'

@@ -57,7 +57,7 @@ export const RetreatsPage: React.FC = () => {
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href={`${BRAND_INFO.contact.whatsappUrl}?text=${encodeURIComponent('Hello Arti, I would like to BOOK MY PLACE for the Meet Little Me retreat in Karjat (Booking amount: ₹10,000).')}`}
+              href={`${BRAND_INFO.contact.whatsappUrl}?text=${encodeURIComponent(`Hello Arti, I would like to BOOK MY PLACE for the Meet Little Me retreat at ${RETREAT_INFO.location} (${RETREAT_INFO.dates}. Booking amount: ₹10,000).`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3.5 rounded-full bg-[#3B1E54] hover:bg-[#4E286E] text-white dark:bg-[#F5EEFA] dark:text-[#1F0E31] dark:hover:bg-white text-xs font-sans uppercase tracking-[0.15em] font-medium transition-all shadow-sm hover:shadow-md hover:shadow-purple-900/10 flex items-center gap-2 group cursor-pointer"
@@ -77,14 +77,14 @@ export const RetreatsPage: React.FC = () => {
         <div className="rounded-3xl overflow-hidden border border-purple-200/80 dark:border-white/10 aspect-[16/9] sm:aspect-[21/9] relative group shadow-md">
           <img
             src={getAssetUrl('/images/retreats/karjat-retreat-sanctuary.jpg')}
-            alt="Meet Little Me Retreat in Karjat Western Ghats"
+            alt="Meet Little Me Retreat at Aamantara Villa, Karjat"
             className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-1000 ease-out"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
           <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row sm:items-end justify-between gap-2 text-white">
             <div>
               <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-emerald-300 block">
-                Karjat Western Ghats • 1 Night / 2 Days
+                {RETREAT_INFO.location} • {RETREAT_INFO.duration}
               </span>
               <span className="font-serif text-xl sm:text-3xl text-white font-light">
                 Meet Little Me • Reconnect & Heal
@@ -224,14 +224,14 @@ export const RetreatsPage: React.FC = () => {
         {/* Booking CTA Footer */}
         <div className="p-8 rounded-3xl bg-[#F2ECF7]/80 dark:bg-white/5 border border-purple-200/80 dark:border-white/10 text-center space-y-4">
           <h3 className="font-serif text-2xl text-[#241734] dark:text-[#F5EEFA]">
-            Ready to Join Us in Karjat?
+            Ready to Join Us at Aamantara Villa, Karjat?
           </h3>
           <p className="text-xs sm:text-sm font-sans text-[#5C4573] dark:text-[#C5B4DA] max-w-lg mx-auto">
-            Book your place with a booking amount of ₹10,000. Limited to 20 participants.
+            Book your place with a booking amount of ₹10,000 for 18th, 19th & 20th September. Limited to 20 participants.
           </p>
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href={`${BRAND_INFO.contact.whatsappUrl}?text=${encodeURIComponent('Hello Arti, I would like to BOOK MY PLACE for the Meet Little Me retreat in Karjat (Booking amount: ₹10,000).')}`}
+              href={`${BRAND_INFO.contact.whatsappUrl}?text=${encodeURIComponent(`Hello Arti, I would like to BOOK MY PLACE for the Meet Little Me retreat at ${RETREAT_INFO.location} (${RETREAT_INFO.dates}. Booking amount: ₹10,000).`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3.5 rounded-full bg-[#3B1E54] hover:bg-[#4E286E] text-white dark:bg-[#F5EEFA] dark:text-[#1F0E31] text-xs font-sans uppercase tracking-[0.15em] font-medium shadow-sm hover:shadow-md transition-all flex items-center gap-2 cursor-pointer"
@@ -240,7 +240,7 @@ export const RetreatsPage: React.FC = () => {
               <ArrowRight className="w-3.5 h-3.5" />
             </a>
             <a
-              href={`${BRAND_INFO.contact.whatsappUrl}?text=${encodeURIComponent('Hello Arti, please share more details regarding the Meet Little Me retreat.')}`}
+              href={`${BRAND_INFO.contact.whatsappUrl}?text=${encodeURIComponent(`Hello Arti, please share more details regarding the Meet Little Me retreat at ${RETREAT_INFO.location} (${RETREAT_INFO.dates}).`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3.5 rounded-full border border-purple-200 dark:border-white/15 text-[#3B1E54] dark:text-[#E2D5F2] hover:bg-white/60 dark:hover:bg-white/5 text-xs font-sans uppercase tracking-[0.15em] font-medium transition-colors flex items-center gap-2 cursor-pointer"

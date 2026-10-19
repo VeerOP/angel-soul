@@ -233,7 +233,7 @@ ${notes ? `• Notes: ${notes}` : ''}`;
                         <option value="Energy Scan (₹7,000)">Energy Scan (₹7,000)</option>
                         <option value="Angel Tarot Reading (From ₹3,500)">Angel Tarot Reading (₹3,500 - ₹5,500)</option>
                         <option value="Transformation Healing">Transformation Healing (Personalised)</option>
-                        <option value="Meet Little Me Retreat (Karjat)">Meet Little Me Retreat • Karjat (₹17,777)</option>
+                        <option value="Meet Little Me Retreat (Aamantara Villa, Karjat)">Meet Little Me Retreat • Aamantara Villa, Karjat (₹17,777)</option>
                         <option value="Akashic Reading & Healing (₹6,000)">Akashic Reading & Healing (₹6,000)</option>
                         <option value="Akashic Healing (₹5,000)">Akashic Healing (₹5,000)</option>
                         <option value="Chakra Healing (₹3,500)">Chakra Healing (₹3,500)</option>
@@ -242,7 +242,7 @@ ${notes ? `• Notes: ${notes}` : ''}`;
                         <option value="House Energy Scan (From ₹8,000)">House Energy Scan & Cleansing (From ₹8,000)</option>
                         <option value="Personalised Energy Bracelet (From ₹6,000)">Personalised Energy Bracelet</option>
                         <option value="Aura Cleansing Salt (₹2,000)">Aura Cleansing Salt (₹2,000)</option>
-                        <option value="Energy Sprays 100ml (₹1,111)">Energy Sprays 100ml (₹1,111)</option>
+                        <option value="Energy Sprays 10ml (Starts at ₹1,111)">Energy Sprays 10ml (Starts at ₹1,111)</option>
                         <option value="Crystals">Crystals (From ₹888)</option>
                       </select>
                     </div>

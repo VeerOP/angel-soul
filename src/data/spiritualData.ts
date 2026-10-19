@@ -479,14 +479,14 @@ export const PRODUCTS: Product[] = [
   {
     id: 'energy-sprays-100ml',
     slug: 'energy-sprays-100ml',
-    name: 'Energy Sprays – 100 ml',
+    name: 'Energy Sprays (10 ml)',
     category: 'Energy Sprays',
     price: 1111,
-    tagline: '₹1,111 each',
-    description: 'Sacred intention mists. Available in 9 specific intentions.',
+    tagline: 'Starting at ₹1,111 (10 ml)',
+    description: 'Sacred intention mists. Available in 9 specific intentions. Starts at ₹1,111 for 10 ml capacity.',
     features: [
-      'Volume: 100 ml',
-      'Price: ₹1,111 each',
+      'Capacity: 10 ml',
+      'Price: Starting at ₹1,111',
       'Available in 9 conscious intentions'
     ],
     options: [
@@ -505,7 +505,7 @@ export const PRODUCTS: Product[] = [
       getAssetUrl('/images/products/holistic-altar-hero.jpg')
     ],
     inStock: true,
-    badge: '₹1,111 each'
+    badge: 'Starts at ₹1,111 (10 ml)'
   },
   {
     id: 'sacred-crystals',
@@ -534,19 +534,19 @@ export const RETREAT_INFO: RetreatDetails = {
   title: 'MEET LITTLE ME',
   collaboration: 'ANGEL SOUL × PARVAT BUDDIES',
   theme: 'ACKNOWLEDGE • FEEL • REMEMBER • HEAL • PROMISE NEW YOU',
-  themeDescription: 'The retreat is designed as a space to pause, reconnect with yourself, understand what you have been carrying from the past and consciously create a new way forward.',
-  dates: '24–25 October 2026',
-  location: 'Karjat',
-  duration: '1 Night / 2 Days',
+  themeDescription: 'Escape the city and retreat to Aamantara Villa, Karjat. A sacred sanctuary designed to pause, reconnect with yourself, enjoy the refreshing pool, lush greenery, delicious homely veg meals, games & quality time with your loved ones while consciously creating a new way forward.',
+  dates: '18th, 19th & 20th September',
+  location: 'Aamantara Villa, Karjat',
+  duration: '2 Nights / 3 Days',
   totalPrice: 17777,
   bookingAmount: 10000,
-  accommodation: 'Twin / Triple sharing',
+  accommodation: 'Private Villa with Pool (Twin / Triple sharing)',
   travel: 'Included',
-  food: 'Healthy Indian + Continental',
+  food: 'Delicious homely veg meals (Pure Vegetarian)',
   capacity: 20,
   spotsRemaining: 7,
   activities: [
-    'Nature walk',
+    'Nature walk & lush greenery exploration',
     'Trek / hiking',
     'Yoga',
     'Meditation',
@@ -556,31 +556,39 @@ export const RETREAT_INFO: RetreatDetails = {
     'Chakra Healing',
     'Crystal Healing',
     'Guided self-reflection',
-    'Nature connection',
+    'Refreshing pool unwind & group games',
     'Personal transformation activities',
-    'Relaxation and integration'
+    'Relaxation, integration & quality bonding'
   ],
   inclusions: [
-    'Stay: Twin / Triple sharing in Karjat',
+    'Stay: Private villa with refreshing pool at Aamantara Villa, Karjat',
     'Travel: Included',
-    'Food: Healthy Indian + Continental',
-    'All guided retreat activities & materials'
+    'Food: Delicious homely pure veg meals',
+    'All guided retreat activities, materials & group games'
   ],
   itinerary: [
     {
-      day: 'Day 1',
-      title: 'Acknowledge • Feel • Remember',
+      day: 'Day 1 (18th Sep)',
+      title: 'Arrival • Acknowledge • Feel',
       schedule: [
-        { time: 'Morning & Afternoon', activity: 'Arrival in Karjat, nature connection, opening circle & guided self-reflection' },
-        { time: 'Evening', activity: 'Artwork, journaling, chakra & crystal healing' }
+        { time: 'Morning & Afternoon', activity: 'Arrival at Aamantara Villa, Karjat, nature connection, private pool & lush greenery unwind, opening circle' },
+        { time: 'Evening', activity: 'Artwork, journaling, chakra & crystal healing under the stars' }
       ]
     },
     {
-      day: 'Day 2',
-      title: 'Heal • Promise New You',
+      day: 'Day 2 (19th Sep)',
+      title: 'Heal • Deep Reconnection',
       schedule: [
-        { time: 'Morning', activity: 'Trek / hiking, yoga, breathwork' },
-        { time: 'Afternoon', activity: 'Personal transformation activities, closing promise & departure' }
+        { time: 'Morning', activity: 'Lush greenery nature walk, morning yoga & breathwork' },
+        { time: 'Afternoon & Evening', activity: 'Personal transformation activities, interactive group games, refreshing pool relaxation & evening meditation' }
+      ]
+    },
+    {
+      day: 'Day 3 (20th Sep)',
+      title: 'Promise New You • Integration & Farewell',
+      schedule: [
+        { time: 'Morning', activity: 'Integration circle, final healing rituals & sacred quality bonding' },
+        { time: 'Afternoon', activity: 'Closing promise, delicious homely veg farewell lunch & departure' }
       ]
     }
   ],
@@ -634,9 +642,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: 'gal-5',
-    title: 'Consecrated Energy Sprays (100 ml)',
+    title: 'Consecrated Energy Sprays (10 ml)',
     category: 'Crystals & Products',
-    caption: 'Sacred intention mists: Aura Cleansing, Protection, Love, Abundance, Prosperity & Road Opener.',
+    caption: 'Sacred intention mists (10 ml): Aura Cleansing, Protection, Love, Abundance, Prosperity & Road Opener.',
     image: getAssetUrl('/images/products/energy-sprays-100ml.jpg')
   },
   {
@@ -662,9 +670,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: 'gal-9',
-    title: 'Meet Little Me Retreat in Karjat',
+    title: 'Meet Little Me Retreat at Aamantara Villa, Karjat',
     category: 'Retreats',
-    caption: 'Angel Soul × Parvat Buddies retreat sanctuary in tranquil Karjat Western Ghats.',
+    caption: 'Angel Soul × Parvat Buddies retreat sanctuary at Aamantara Villa in lush Karjat.',
     image: getAssetUrl('/images/retreats/karjat-retreat-sanctuary.jpg')
   }
 ];

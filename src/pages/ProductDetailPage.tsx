@@ -98,7 +98,7 @@ export const ProductDetailPage: React.FC = () => {
                   >
                     {product.options.map((opt) => (
                       <option key={opt} value={opt}>
-                        {opt} (₹1,111)
+                        {opt} (Starts at ₹1,111 / 10 ml)
                       </option>
                     ))}
                   </select>

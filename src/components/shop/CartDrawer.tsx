@@ -124,7 +124,7 @@ ${specialInstructions ? `Special Instructions: ${specialInstructions}` : ''}`;
                       Your bag is empty
                     </h4>
                     <p className="text-xs text-[#5C4573] dark:text-purple-300 max-w-xs mx-auto leading-relaxed font-sans">
-                      Discover personalised energy bracelets, aura cleansing salt, 100ml sprays, and consecrated crystals.
+                      Discover personalised energy bracelets, aura cleansing salt, 10ml intention sprays, and consecrated crystals.
                     </p>
                     <Link
                       to="/products"

@@ -7,7 +7,7 @@ export const SacredMarquee: React.FC = () => {
     '✦ Daily Angel Tarot Reading • Personalised Everyday by Date of Birth',
     '✦ Energy Scan → Understanding → Personalised Healing → Transformation',
     '✦ Start Your Healing Journey • Begin with an Energy Scan (₹7,000)',
-    '✦ Meet Little Me Retreat • ANGEL SOUL × PARVAT BUDDIES • Karjat • 24–25 October 2026',
+    '✦ Meet Little Me Retreat • ANGEL SOUL × PARVAT BUDDIES • Aamantara Villa, Karjat • 18th, 19th & 20th September',
     '✦ WhatsApp & Appointment Hotline: +91 96196 33432',
     '✦ Connect on Instagram: @angel_soul_55566',
   ];

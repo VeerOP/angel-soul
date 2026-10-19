@@ -45,10 +45,10 @@ export const FloatingConnect: React.FC = () => {
               </button>
               <button
                 type="button"
-                onClick={() => handleWhatsApp('Hello Arti, I want to inquire about the Meet Little Me retreat in Karjat (24–25 October 2026).')}
+                onClick={() => handleWhatsApp('Hello Arti, I want to inquire about the Meet Little Me retreat at Aamantara Villa, Karjat (18th, 19th & 20th September).')}
                 className="w-full text-left p-2 rounded-xl hover:bg-purple-50/70 dark:hover:bg-white/5 transition-colors border border-purple-100/60 dark:border-white/5 font-sans"
               >
-                Meet Little Me Retreat (Karjat)
+                Meet Little Me Retreat (Aamantara Villa, Karjat)
               </button>
               <button
                 type="button"

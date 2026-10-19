@@ -161,7 +161,7 @@ export const Footer: React.FC = () => {
                   onClick={() => scrollTo('retreats')}
                   className="hover:text-[#241734] dark:hover:text-white transition-colors cursor-pointer text-left"
                 >
-                  Karjat Retreat (Meet Little Me)
+                  Aamantara Villa, Karjat Retreat (Meet Little Me)
                 </button>
               </li>
             </ul>

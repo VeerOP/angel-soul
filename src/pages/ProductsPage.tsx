@@ -252,7 +252,7 @@ export const ProductsPage: React.FC = () => {
           </motion.section>
         )}
 
-        {/* 3. Energy Sprays – 100 ml */}
+        {/* 3. Energy Sprays (10 ml) */}
         {(selectedCategory === 'All' || selectedCategory === 'Energy Sprays') && (
           <motion.section
             initial={{ opacity: 0, y: 20 }}
@@ -266,7 +266,7 @@ export const ProductsPage: React.FC = () => {
                 <div className="aspect-square rounded-2xl overflow-hidden bg-purple-50/50 dark:bg-white/5 border border-purple-100 dark:border-white/10">
                   <img
                     src={PRODUCTS[2].images[0]}
-                    alt="Energy Sprays – 100 ml"
+                    alt="Energy Sprays (10 ml)"
                     className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                   />
                 </div>
@@ -276,14 +276,14 @@ export const ProductsPage: React.FC = () => {
                 <div className="flex items-start justify-between gap-2">
                   <div>
                     <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#735391] dark:text-[#A792C0] block mb-1">
-                      03 • Sacred Mists
+                      03 • Sacred Mists (10 ml)
                     </span>
                     <h2 className="font-serif text-2xl sm:text-3xl text-[#241734] dark:text-[#F5EEFA] font-normal">
-                      Energy Sprays – 100 ml
+                      Energy Sprays (10 ml)
                     </h2>
                   </div>
                   <span className="font-serif text-2xl sm:text-3xl text-[#3B1E54] dark:text-[#D5C2EC] whitespace-nowrap">
-                    ₹1,111 each
+                    Starts at ₹1,111
                   </span>
                 </div>
 
@@ -321,10 +321,10 @@ export const ProductsPage: React.FC = () => {
                     className="w-full sm:w-auto px-7 py-3 rounded-full bg-[#3B1E54] hover:bg-[#4E286E] text-white dark:bg-[#F5EEFA] dark:text-[#1F0E31] dark:hover:bg-white text-xs font-sans uppercase tracking-[0.15em] font-medium shadow-sm hover:shadow-md hover:-translate-y-0.5 active:scale-98 transition-all text-center flex items-center justify-center gap-2"
                   >
                     <ShoppingBag className="w-3.5 h-3.5" />
-                    <span>Add {sprayIntention} (₹1,111)</span>
+                    <span>Add {sprayIntention} (Starts ₹1,111)</span>
                   </button>
                   <a
-                    href={`${BRAND_INFO.contact.whatsappUrl}?text=${encodeURIComponent(`Hello Arti, I want to order the Energy Spray (100 ml) for ${sprayIntention} (₹1,111).`)}`}
+                    href={`${BRAND_INFO.contact.whatsappUrl}?text=${encodeURIComponent(`Hello Arti, I want to order the Energy Spray (10 ml) for ${sprayIntention} (Starts at ₹1,111).`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full sm:w-auto px-6 py-3 rounded-full border border-purple-300 dark:border-white/15 bg-white/50 dark:bg-white/5 text-[#241734] dark:text-[#F5EEFA] hover:border-[#3B1E54] dark:hover:border-white text-xs font-sans uppercase tracking-[0.15em] font-medium hover:-translate-y-0.5 active:scale-98 transition-all text-center"

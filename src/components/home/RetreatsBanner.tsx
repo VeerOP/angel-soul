@@ -65,14 +65,14 @@ export const RetreatsBanner: React.FC = () => {
             <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 flex flex-col sm:flex-row sm:items-end justify-between gap-2 text-white">
               <div>
                 <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-emerald-300 block">
-                  Karjat Sanctuary • Western Ghats
+                  Aamantara Villa, Karjat • Private Villa Sanctuary
                 </span>
                 <span className="font-serif text-lg sm:text-2xl text-white font-light">
                   A Space to Pause, Reconnect & Transform
                 </span>
               </div>
               <span className="text-xs font-mono bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-white w-fit border border-white/20">
-                1 Night / 2 Days • Oct 24–25
+                {RETREAT_INFO.duration} • Sep 18–20
               </span>
             </div>
           </div>
@@ -198,7 +198,7 @@ export const RetreatsBanner: React.FC = () => {
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
               <a
-                href={`${BRAND_INFO.contact.whatsappUrl}?text=${encodeURIComponent('Hello Arti, I would like to BOOK MY PLACE for the Meet Little Me retreat (ANGEL SOUL × PARVAT BUDDIES in Karjat, 24–25 October 2026. Booking amount: ₹10,000).')}`}
+                href={`${BRAND_INFO.contact.whatsappUrl}?text=${encodeURIComponent(`Hello Arti, I would like to BOOK MY PLACE for the Meet Little Me retreat (ANGEL SOUL × PARVAT BUDDIES at ${RETREAT_INFO.location}, ${RETREAT_INFO.dates}. Booking amount: ₹10,000).`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto group inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#3B1E54] hover:bg-[#4E286E] text-white dark:bg-[#F5EEFA] dark:text-[#1F0E31] dark:hover:bg-white font-sans text-xs tracking-[0.15em] uppercase font-medium shadow-sm hover:shadow-md hover:-translate-y-0.5 active:scale-98 transition-all cursor-pointer"
@@ -208,7 +208,7 @@ export const RetreatsBanner: React.FC = () => {
               </a>
 
               <a
-                href={`${BRAND_INFO.contact.whatsappUrl}?text=${encodeURIComponent('Hello Arti, please share more details regarding the Meet Little Me retreat in Karjat (24–25 October 2026).')}`}
+                href={`${BRAND_INFO.contact.whatsappUrl}?text=${encodeURIComponent(`Hello Arti, please share more details regarding the Meet Little Me retreat at ${RETREAT_INFO.location} (${RETREAT_INFO.dates}).`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-purple-200/80 dark:border-white/15 text-[#3B1E54] dark:text-[#E2D5F2] hover:bg-white/60 dark:hover:bg-white/5 font-sans text-xs tracking-[0.15em] uppercase font-medium transition-colors cursor-pointer"
