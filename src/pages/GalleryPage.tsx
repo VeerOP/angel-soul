@@ -8,7 +8,7 @@ export const GalleryPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [lightboxItem, setLightboxItem] = useState<GalleryItem | null>(null);
 
-  const categories = ['All', 'Sanctuary', 'Sessions', 'Retreats', 'Crystals & Products'];
+  const categories = ['All', 'Sanctuary', 'Sessions', 'Angel Tarot', 'Retreats', 'Crystals & Products'];
 
   const filteredItems = GALLERY_ITEMS.filter((item) => {
     if (selectedCategory === 'All') return true;

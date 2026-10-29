@@ -4,6 +4,7 @@ import { ArrowRight, MessageCircle, Calendar } from 'lucide-react';
 import { BRAND_INFO } from '../data/spiritualData';
 import { useBooking } from '../context/BookingContext';
 import { Link } from 'react-router-dom';
+import { getAssetUrl } from '../utils/assetUrl';
 
 export const SessionsPage: React.FC = () => {
   const { openBooking } = useBooking();
@@ -60,6 +61,26 @@ export const SessionsPage: React.FC = () => {
               <h2 className="font-serif text-2xl sm:text-3xl text-[#241734] dark:text-[#F5EEFA] font-normal">
                 Angel Tarot Reading
               </h2>
+              <div className="flex items-center gap-2 mt-2">
+                <div className="flex -space-x-1.5">
+                  {[
+                    { img: '/images/tarot/the-hierophant.jpg', alt: 'The Hierophant' },
+                    { img: '/images/tarot/the-lovers.jpg', alt: 'The Lovers' },
+                    { img: '/images/tarot/the-star.jpg', alt: 'The Star' },
+                    { img: '/images/tarot/the-chariot.jpg', alt: 'The Chariot' }
+                  ].map((c, i) => (
+                    <img
+                      key={i}
+                      src={getAssetUrl(c.img)}
+                      alt={c.alt}
+                      className="w-6 h-9 object-cover rounded-md border border-white dark:border-[#1A0E28] shadow-xs"
+                    />
+                  ))}
+                </div>
+                <span className="text-[11px] font-sans text-[#735391] dark:text-[#C5B4DA]">
+                  Channeled with the Angel Soul Sacred Deck
+                </span>
+              </div>
             </div>
             <div className="text-left sm:text-right">
               <span className="text-xs font-mono uppercase tracking-wider text-[#735391] dark:text-[#A792C0] block">

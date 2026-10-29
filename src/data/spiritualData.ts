@@ -123,7 +123,7 @@ export const HEALING_MODALITIES: HealingModality[] = [
     description: 'Combining intuitive guidance and card reflection to help understand your current path, patterns, and decisions.',
     benefits: ['Clarity on decisions', 'Understanding patterns', 'Loving intuitive guidance'],
     combinedWith: ['Energy Scanning', 'Spiritual Guidance'],
-    image: 'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=800&q=80'
+    image: getAssetUrl('/images/tarot/the-hierophant.jpg')
   },
   {
     id: 'energy-scanning',
@@ -674,6 +674,76 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Retreats',
     caption: 'Angel Soul × Parvat Buddies retreat sanctuary at Aamantara Villa in lush Karjat.',
     image: getAssetUrl('/images/retreats/karjat-retreat-sanctuary.jpg')
+  },
+  {
+    id: 'gal-tarot-lovers',
+    title: 'VI • The Lovers',
+    category: 'Angel Tarot',
+    caption: 'Archangel Chamuel – Unconditional Love & Soul Alignment. Authentic card from the Angel Soul sacred deck.',
+    image: getAssetUrl('/images/tarot/the-lovers.jpg')
+  },
+  {
+    id: 'gal-tarot-star',
+    title: 'XVII • The Star',
+    category: 'Angel Tarot',
+    caption: 'Archangel Jophiel – Renewed Hope, Faith & Divine Inspiration. Gold-gilded sacred arcana.',
+    image: getAssetUrl('/images/tarot/the-star.jpg')
+  },
+  {
+    id: 'gal-tarot-hierophant',
+    title: 'V • The Hierophant',
+    category: 'Angel Tarot',
+    caption: 'Archangel Sandalphon – Spiritual Wisdom & Answered Prayers. Guidance, tradition, and belief.',
+    image: getAssetUrl('/images/tarot/the-hierophant.jpg')
+  },
+  {
+    id: 'gal-tarot-chariot',
+    title: 'VII • The Chariot',
+    category: 'Angel Tarot',
+    caption: 'Archangel Metatron – Will • Control • Victory. Channeled momentum and focus.',
+    image: getAssetUrl('/images/tarot/the-chariot.jpg')
+  },
+  {
+    id: 'gal-tarot-strength',
+    title: 'VIII • Strength',
+    category: 'Angel Tarot',
+    caption: 'Archangel Ariel – Courage • Compassion • Control. Gentle inner resilience.',
+    image: getAssetUrl('/images/tarot/strength.jpg')
+  },
+  {
+    id: 'gal-tarot-moon',
+    title: 'XVIII • The Moon',
+    category: 'Angel Tarot',
+    caption: 'Archangel Haniel – Illusion • Intuition • Revelation. Subconscious clearing and psychic gifts.',
+    image: getAssetUrl('/images/tarot/the-moon.jpg')
+  },
+  {
+    id: 'gal-tarot-renewal',
+    title: 'XX • Renewal (Judgement)',
+    category: 'Angel Tarot',
+    caption: 'Archangel Jeremiel – Awakening • Calling • Renewal. Soul ascension and conscious life review.',
+    image: getAssetUrl('/images/tarot/renewal.jpg')
+  },
+  {
+    id: 'gal-tarot-world',
+    title: 'XXI • The World',
+    category: 'Angel Tarot',
+    caption: 'Archangel Michael – Completion • Harmony • Fulfillment. Wholeness and cosmic alignment.',
+    image: getAssetUrl('/images/tarot/the-world.jpg')
+  },
+  {
+    id: 'gal-tarot-cups',
+    title: 'Six of Cups • Heart Innocence',
+    category: 'Angel Tarot',
+    caption: 'Suit of Cups – Nostalgia • Innocence • Gift. Healing the inner child through pure warmth.',
+    image: getAssetUrl('/images/tarot/six-of-cups.jpg')
+  },
+  {
+    id: 'gal-tarot-pentacles',
+    title: 'Four of Pentacles • Fortress of Strength',
+    category: 'Angel Tarot',
+    caption: 'Suit of Pentacles – I Am My Own Fortress, I Hoard My Strength. Sacred boundary affirmation.',
+    image: getAssetUrl('/images/tarot/four-of-pentacles-affirmation.jpg')
   }
 ];
 

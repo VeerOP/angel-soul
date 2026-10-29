@@ -113,7 +113,7 @@ export interface Testimonial {
 export interface GalleryItem {
   id: string;
   title: string;
-  category: 'Sessions' | 'Retreats' | 'Crystals & Products' | 'Sanctuary';
+  category: 'Sessions' | 'Retreats' | 'Crystals & Products' | 'Sanctuary' | 'Angel Tarot';
   caption: string;
   image: string;
 }
@@ -154,7 +154,10 @@ export interface DailyTarotCard {
   keywords: string[];
   element: string;
   image: string;
+  webpImage?: string;
   message: string;
   affirmation: string;
   guidance: string;
+  suit?: 'Major Arcana' | 'Cups' | 'Pentacles' | 'Swords' | 'Wands';
+  isAuthenticCard?: boolean;
 }

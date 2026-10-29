@@ -1,7 +1,13 @@
-import React, { useState, useId } from 'react';
+import React, { useState, useId, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, MessageCircle, Heart, Compass, Shield, RotateCw } from 'lucide-react';
-import { ANGEL_TAROT_CARDS, calculateBirthAndDailyTarot, TarotNumerologyResult } from '../../data/dailyTarotData';
+import { Sparkles, Heart, Compass, RotateCw, X, ExternalLink } from 'lucide-react';
+import {
+  ANGEL_TAROT_CARDS,
+  AUTHENTIC_DECK_CARDS,
+  ALL_ANGEL_TAROT_CARDS,
+  calculateBirthAndDailyTarot,
+  TarotNumerologyResult
+} from '../../data/dailyTarotData';
 import { DailyTarotCard } from '../../types';
 import { BRAND_INFO } from '../../data/spiritualData';
 
@@ -9,6 +15,8 @@ const MONTH_NAMES = [
   'January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December'
 ];
+
+type DeckFilter = 'all' | 'authentic' | 'major' | 'cups' | 'pentacles' | 'swords' | 'wands';
 
 export const DailyTarotSection: React.FC = () => {
   const [birthDay, setBirthDay] = useState<number>(() => {
@@ -26,7 +34,7 @@ export const DailyTarotSection: React.FC = () => {
     return saved ? parseInt(saved, 10) : 1995;
   });
 
-  const [isRevealed, setIsRevealed] = useState<boolean>(() => {
+  const [, setIsRevealed] = useState<boolean>(() => {
     return Boolean(localStorage.getItem('angel_soul_dob_day'));
   });
 
@@ -37,7 +45,17 @@ export const DailyTarotSection: React.FC = () => {
   const [selectedView, setSelectedView] = useState<'daily' | 'soul'>('daily');
   const [isFlipping, setIsFlipping] = useState<boolean>(false);
   const [inspectCard, setInspectCard] = useState<DailyTarotCard | null>(null);
+  const [deckFilter, setDeckFilter] = useState<DeckFilter>('all');
   const marqueeKeyId = useId();
+
+  // Handle ESC key to dismiss inspect modal
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setInspectCard(null);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   // Active displayed card based on tab
   const activeCard: DailyTarotCard = selectedView === 'daily' ? readingResult.dailyCard : readingResult.soulCard;
@@ -62,6 +80,18 @@ export const DailyTarotSection: React.FC = () => {
   const handleCardClick = (card: DailyTarotCard) => {
     setInspectCard(card);
   };
+
+  // Filtered cards for marquee and explorer
+  const filteredCards = ALL_ANGEL_TAROT_CARDS.filter((card) => {
+    if (deckFilter === 'all') return true;
+    if (deckFilter === 'authentic') return card.isAuthenticCard;
+    if (deckFilter === 'major') return card.suit === 'Major Arcana';
+    if (deckFilter === 'cups') return card.suit === 'Cups';
+    if (deckFilter === 'pentacles') return card.suit === 'Pentacles';
+    if (deckFilter === 'swords') return card.suit === 'Swords';
+    if (deckFilter === 'wands') return card.suit === 'Wands';
+    return true;
+  });
 
   return (
     <section
@@ -94,16 +124,39 @@ export const DailyTarotSection: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* 1. CONTINUOUS INFINITE CAROUSEL OF THE 22 ARCANA */}
-        <div className="space-y-3">
-          <div className="flex items-center justify-between px-2 text-xs font-mono uppercase tracking-wider text-[#735391] dark:text-[#A792C0]">
-            <span className="flex items-center gap-1.5">
+        {/* 1. CONTINUOUS STREAM OF THE ANGEL TAROT DECK */}
+        <div className="space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-2">
+            <div className="flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-[#735391] dark:text-[#A792C0]">
               <Compass className="w-3.5 h-3.5" />
-              <span>The 22 Angel Arcana Deck (Infinite Stream)</span>
-            </span>
-            <span className="hidden sm:inline-block text-[11px] font-sans lowercase text-[#5C4573] dark:text-[#C5B4DA]">
-              Hover to pause • Click to inspect card
-            </span>
+              <span>Angel Soul Deck ({filteredCards.length} Sacred Cards)</span>
+            </div>
+
+            {/* Filter Pills */}
+            <div className="flex flex-wrap items-center gap-1.5">
+              {[
+                { id: 'all', label: `All (${ALL_ANGEL_TAROT_CARDS.length})` },
+                { id: 'authentic', label: `Physical Deck (${AUTHENTIC_DECK_CARDS.length})` },
+                { id: 'major', label: `Major Arcana (${ANGEL_TAROT_CARDS.length})` },
+                { id: 'cups', label: 'Cups' },
+                { id: 'pentacles', label: 'Pentacles' },
+                { id: 'swords', label: 'Swords' },
+                { id: 'wands', label: 'Wands' }
+              ].map((tab) => (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setDeckFilter(tab.id as DeckFilter)}
+                  className={`px-2.5 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider transition-all cursor-pointer ${
+                    deckFilter === tab.id
+                      ? 'bg-[#3B1E54] text-white dark:bg-[#F5EEFA] dark:text-[#1F0E31] shadow-xs'
+                      : 'border border-purple-200/70 dark:border-white/10 bg-white/60 dark:bg-white/5 text-[#5C4573] dark:text-[#C5B4DA] hover:border-purple-300'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Infinite Carousel Track */}
@@ -113,23 +166,38 @@ export const DailyTarotSection: React.FC = () => {
             <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-l from-[#F5EFFB] dark:from-[#150A22] to-transparent z-10 pointer-events-none" />
 
             <div className="flex w-max animate-marquee group-hover:[animation-play-state:paused]">
-              {[...ANGEL_TAROT_CARDS, ...ANGEL_TAROT_CARDS].map((card, idx) => (
+              {[...filteredCards, ...filteredCards].map((card, idx) => (
                 <button
                   key={`${marqueeKeyId}-${card.id}-${idx}`}
                   type="button"
                   onClick={() => handleCardClick(card)}
-                  className="mx-2 sm:mx-2.5 text-left w-36 sm:w-40 p-2.5 rounded-2xl border border-purple-200/80 dark:border-white/10 bg-white/80 dark:bg-[#1E1030]/90 hover:border-[#3B1E54] dark:hover:border-purple-300 hover:shadow-md transition-all duration-300 card-hover shrink-0 cursor-pointer"
+                  className="mx-2 sm:mx-2.5 text-left w-36 sm:w-44 p-2.5 rounded-2xl border border-purple-200/80 dark:border-white/10 bg-white/80 dark:bg-[#1E1030]/90 hover:border-[#3B1E54] dark:hover:border-purple-300 hover:shadow-lg transition-all duration-300 card-hover shrink-0 cursor-pointer"
                 >
-                  <div className="aspect-[2.75/4.2] rounded-xl overflow-hidden mb-2 relative border border-purple-100 dark:border-white/5">
-                    <img
-                      src={card.image}
-                      alt={card.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute top-1.5 left-1.5 px-2 py-0.5 rounded-full bg-black/70 text-amber-200 font-serif text-[10px] tracking-wider border border-amber-300/30">
+                  {/* Vertical Tarot Card Frame (9:16 Aspect Ratio) */}
+                  <div className="aspect-[9/16] rounded-xl overflow-hidden mb-2 relative border border-purple-100 dark:border-white/5 bg-black/5 dark:bg-black/30">
+                    <picture>
+                      {card.webpImage && <source srcSet={card.webpImage} type="image/webp" />}
+                      <img
+                        src={card.image}
+                        alt={card.name}
+                        loading="lazy"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </picture>
+
+                    {/* Number Badge */}
+                    <div className="absolute top-1.5 left-1.5 px-2 py-0.5 rounded-full bg-black/75 text-amber-200 font-serif text-[10px] tracking-wider border border-amber-300/30 backdrop-blur-xs">
                       {card.number}
                     </div>
+
+                    {/* Authentic Deck Tag */}
+                    {card.isAuthenticCard && (
+                      <div className="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded-full bg-amber-500/90 text-white font-mono text-[8px] tracking-wider uppercase font-semibold">
+                        Physical
+                      </div>
+                    )}
                   </div>
+
                   <span className="text-[9px] font-mono uppercase tracking-wider text-[#735391] dark:text-[#A792C0] block truncate">
                     {card.archangel}
                   </span>
@@ -143,6 +211,9 @@ export const DailyTarotSection: React.FC = () => {
               ))}
             </div>
           </div>
+          <p className="text-center text-[11px] font-sans text-[#735391] dark:text-[#A792C0]">
+            Hover to pause • Click any card to inspect full high-resolution sacred artwork & guidance
+          </p>
         </div>
 
         {/* 2. INTERACTIVE BIRTHDATE TAROT READING & 3D CARD DISPLAY */}
@@ -159,25 +230,26 @@ export const DailyTarotSection: React.FC = () => {
               <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#735391] dark:text-[#A792C0] block">
                 Birth Blueprint
               </span>
-              <h3 className="font-serif text-2xl font-light text-[#241734] dark:text-[#F5EEFA]">
+              <h3 className="font-serif text-xl sm:text-2xl text-[#241734] dark:text-[#F5EEFA] font-medium">
                 Enter Your Birthday
               </h3>
-              <p className="text-xs font-sans text-[#5C4573] dark:text-[#C5B4DA] leading-relaxed">
-                Calculates your lifelong Soul Arcana + today's unique transit guidance card.
+              <p className="text-xs text-[#5C4573] dark:text-[#C5B4DA] font-sans leading-relaxed">
+                Your birth blueprint reveals both your lifelong Soul Card archetype and your dynamic Daily Arcana.
               </p>
             </div>
 
             <form onSubmit={handleDrawCard} className="space-y-4">
               <div className="grid grid-cols-3 gap-2 sm:gap-2.5">
                 {/* Day */}
-                <div>
-                  <label className="text-[10px] font-mono uppercase tracking-wider text-[#5C4573] dark:text-[#C5B4DA] block mb-1">
+                <div className="space-y-1">
+                  <label htmlFor="dob-day" className="text-[10px] font-mono uppercase text-[#735391] dark:text-[#A792C0] block">
                     Day
                   </label>
                   <select
+                    id="dob-day"
                     value={birthDay}
                     onChange={(e) => setBirthDay(parseInt(e.target.value, 10))}
-                    className="w-full text-xs font-sans p-2.5 rounded-xl border border-purple-200/80 dark:border-white/15 bg-white dark:bg-[#12091C] text-[#241734] dark:text-[#F5EEFA] focus:outline-none focus:border-[#3B1E54] dark:focus:border-white transition-colors cursor-pointer"
+                    className="w-full px-2 py-2 rounded-xl border border-purple-200 dark:border-white/10 bg-white/90 dark:bg-white/5 text-xs text-[#241734] dark:text-[#F5EEFA] focus:outline-none focus:ring-2 focus:ring-purple-400"
                   >
                     {Array.from({ length: 31 }, (_, i) => i + 1).map((d) => (
                       <option key={d} value={d}>
@@ -188,14 +260,15 @@ export const DailyTarotSection: React.FC = () => {
                 </div>
 
                 {/* Month */}
-                <div>
-                  <label className="text-[10px] font-mono uppercase tracking-wider text-[#5C4573] dark:text-[#C5B4DA] block mb-1">
+                <div className="space-y-1">
+                  <label htmlFor="dob-month" className="text-[10px] font-mono uppercase text-[#735391] dark:text-[#A792C0] block">
                     Month
                   </label>
                   <select
+                    id="dob-month"
                     value={birthMonth}
                     onChange={(e) => setBirthMonth(parseInt(e.target.value, 10))}
-                    className="w-full text-xs font-sans p-2.5 rounded-xl border border-purple-200/80 dark:border-white/15 bg-white dark:bg-[#12091C] text-[#241734] dark:text-[#F5EEFA] focus:outline-none focus:border-[#3B1E54] dark:focus:border-white transition-colors cursor-pointer"
+                    className="w-full px-2 py-2 rounded-xl border border-purple-200 dark:border-white/10 bg-white/90 dark:bg-white/5 text-xs text-[#241734] dark:text-[#F5EEFA] focus:outline-none focus:ring-2 focus:ring-purple-400"
                   >
                     {MONTH_NAMES.map((m, idx) => (
                       <option key={m} value={idx + 1}>
@@ -206,16 +279,17 @@ export const DailyTarotSection: React.FC = () => {
                 </div>
 
                 {/* Year */}
-                <div>
-                  <label className="text-[10px] font-mono uppercase tracking-wider text-[#5C4573] dark:text-[#C5B4DA] block mb-1">
+                <div className="space-y-1">
+                  <label htmlFor="dob-year" className="text-[10px] font-mono uppercase text-[#735391] dark:text-[#A792C0] block">
                     Year
                   </label>
                   <select
+                    id="dob-year"
                     value={birthYear}
                     onChange={(e) => setBirthYear(parseInt(e.target.value, 10))}
-                    className="w-full text-xs font-sans p-2.5 rounded-xl border border-purple-200/80 dark:border-white/15 bg-white dark:bg-[#12091C] text-[#241734] dark:text-[#F5EEFA] focus:outline-none focus:border-[#3B1E54] dark:focus:border-white transition-colors cursor-pointer"
+                    className="w-full px-2 py-2 rounded-xl border border-purple-200 dark:border-white/10 bg-white/90 dark:bg-white/5 text-xs text-[#241734] dark:text-[#F5EEFA] focus:outline-none focus:ring-2 focus:ring-purple-400"
                   >
-                    {Array.from({ length: 90 }, (_, i) => 2026 - i).map((y) => (
+                    {Array.from({ length: 80 }, (_, i) => 2026 - i).map((y) => (
                       <option key={y} value={y}>
                         {y}
                       </option>
@@ -224,28 +298,24 @@ export const DailyTarotSection: React.FC = () => {
                 </div>
               </div>
 
-              <div className="pt-2">
-                <button
-                  type="submit"
-                  disabled={isFlipping}
-                  className="w-full py-3.5 px-4 rounded-full bg-[#3B1E54] hover:bg-[#4E286E] text-white dark:bg-[#F5EEFA] dark:text-[#1F0E31] dark:hover:bg-white text-xs font-sans uppercase tracking-[0.14em] font-medium shadow-xs hover:shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
-                >
-                  <Sparkles className="w-3.5 h-3.5 text-amber-300 dark:text-purple-700" />
-                  <span>{isRevealed ? 'Draw Today’s Reading' : 'Reveal Today’s Angel Card'}</span>
-                </button>
-              </div>
-
-              {/* Authentic Numerology Note */}
-              <div className="p-3.5 rounded-2xl bg-purple-50/70 dark:bg-white/5 border border-purple-100 dark:border-white/5 space-y-1 text-xs">
-                <div className="flex items-center gap-1.5 text-[#3B1E54] dark:text-purple-300 font-medium">
-                  <Shield className="w-3.5 h-3.5" />
-                  <span>Authentic Numerology Engine</span>
-                </div>
-                <p className="text-[11px] font-sans text-[#5C4573] dark:text-[#C5B4DA] leading-relaxed">
-                  Your reading calculates both your lifelong <strong>Soul Arcana</strong> and today’s <strong>Transit Arcana</strong> based on your date of birth and the calendar day.
-                </p>
-              </div>
+              <button
+                type="submit"
+                className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-[#3B1E54] to-[#5C3280] dark:from-[#4A2566] dark:to-[#6C3C96] text-white text-xs font-sans uppercase tracking-[0.15em] font-medium hover:shadow-md transition-all duration-300 cursor-pointer flex items-center justify-center gap-2"
+              >
+                <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+                <span>Calculate My Reading</span>
+              </button>
             </form>
+
+            {/* Quick explanation pill */}
+            <div className="p-3.5 rounded-2xl bg-purple-50/70 dark:bg-white/5 border border-purple-200/60 dark:border-white/5 space-y-1">
+              <span className="text-[10px] font-mono uppercase text-[#3B1E54] dark:text-purple-300 font-semibold block">
+                How It Works:
+              </span>
+              <p className="text-[11px] font-sans text-[#5C4573] dark:text-[#C5B4DA] leading-relaxed">
+                Uses authentic digit reduction: your birth vibrations synthesize with today’s planetary transit to deliver daily channeled guidance.
+              </p>
+            </div>
           </motion.div>
 
           {/* Right Column: 3D Physical Tarot Card + Channeled Details */}
@@ -294,7 +364,7 @@ export const DailyTarotSection: React.FC = () => {
                 {/* 3D PERSPECTIVE FLIP TAROT CARD */}
                 <div className="md:col-span-5 flex flex-col items-center">
                   <div
-                    className="w-56 sm:w-64 aspect-[2.75/4.75] cursor-pointer select-none"
+                    className="w-56 sm:w-64 aspect-[9/16] cursor-pointer select-none"
                     style={{ perspective: '1200px' }}
                     onClick={() => setIsFlipping(!isFlipping)}
                     title="Click to flip card"
@@ -308,43 +378,18 @@ export const DailyTarotSection: React.FC = () => {
                     >
                       {/* CARD FACE */}
                       <div
-                        className="absolute inset-0 w-full h-full rounded-2xl overflow-hidden bg-gradient-to-b from-[#2B163E] to-[#12071E] border-2 border-amber-300/80 shadow-2xl p-3 flex flex-col justify-between"
+                        className="absolute inset-0 w-full h-full rounded-2xl overflow-hidden bg-gradient-to-b from-[#2B163E] to-[#12071E] border-2 border-amber-300/80 shadow-2xl flex flex-col justify-between"
                         style={{ backfaceVisibility: 'hidden' }}
                       >
-                        {/* Gold Foil Header Plate */}
-                        <div className="border border-amber-300/40 rounded-xl p-1.5 text-center bg-black/40 backdrop-blur-xs flex items-center justify-between">
-                          <span className="text-[10px] font-mono tracking-widest text-amber-200 uppercase font-semibold">
-                            ✦ {activeCard.number} ✦
-                          </span>
-                          <span className="text-[9px] font-mono uppercase tracking-wider text-amber-100/90 truncate max-w-[120px]">
-                            {activeCard.archangel}
-                          </span>
-                        </div>
-
-                        {/* Sacred Arched Artwork Frame */}
-                        <div className="relative my-2 flex-1 rounded-xl overflow-hidden border border-amber-300/30">
+                        <picture className="w-full h-full">
+                          {activeCard.webpImage && <source srcSet={activeCard.webpImage} type="image/webp" />}
                           <img
                             src={activeCard.image}
                             alt={activeCard.name}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover rounded-2xl"
+                            loading="eager"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
-                          <div className="absolute bottom-2 left-2 right-2 text-center">
-                            <span className="text-[9px] font-mono uppercase tracking-widest text-amber-300/90 block">
-                              {activeCard.element}
-                            </span>
-                          </div>
-                        </div>
-
-                        {/* Gold Foil Bottom Banner */}
-                        <div className="border border-amber-300/40 rounded-xl p-2 text-center bg-black/40 backdrop-blur-xs space-y-0.5">
-                          <h4 className="font-serif text-sm font-semibold text-white tracking-widest uppercase">
-                            {activeCard.name}
-                          </h4>
-                          <span className="text-[10px] font-sans text-purple-200 italic block truncate">
-                            {activeCard.theme}
-                          </span>
-                        </div>
+                        </picture>
                       </div>
 
                       {/* CARD BACK (Ornate Sacred Geometry) */}
@@ -382,7 +427,10 @@ export const DailyTarotSection: React.FC = () => {
                     </div>
                   </div>
 
-                  <span className="text-[11px] font-mono text-[#735391] dark:text-[#A792C0] mt-3 flex items-center gap-1.5 cursor-pointer" onClick={() => setIsFlipping(!isFlipping)}>
+                  <span
+                    className="text-[11px] font-mono text-[#735391] dark:text-[#A792C0] mt-3 flex items-center gap-1.5 cursor-pointer hover:text-[#3B1E54] dark:hover:text-purple-200 transition-colors"
+                    onClick={() => setIsFlipping(!isFlipping)}
+                  >
                     <RotateCw className="w-3 h-3" />
                     <span>Click card to flip</span>
                   </span>
@@ -398,6 +446,11 @@ export const DailyTarotSection: React.FC = () => {
                       <span className="px-2 py-0.5 rounded-full bg-purple-100 dark:bg-white/10 text-[10px] font-mono uppercase text-[#3B1E54] dark:text-[#F5EEFA]">
                         Card {activeCard.number}
                       </span>
+                      {activeCard.isAuthenticCard && (
+                        <span className="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-700 dark:text-amber-300 text-[10px] font-mono uppercase border border-amber-400/40">
+                          Physical Deck
+                        </span>
+                      )}
                     </div>
 
                     <h3 className="font-serif text-2xl sm:text-3xl text-[#241734] dark:text-[#F5EEFA] font-light mt-1">
@@ -451,39 +504,31 @@ export const DailyTarotSection: React.FC = () => {
                     </p>
                   </div>
 
-                  {/* Daily Guidance Action */}
-                  <p className="text-xs font-sans text-[#5C4573] dark:text-[#C5B4DA] leading-relaxed">
-                    <strong className="text-[#241734] dark:text-white">Daily Practice:</strong> {activeCard.guidance}
-                  </p>
-                </div>
-              </div>
+                  {/* Guidance Recommendation */}
+                  <div className="text-xs text-[#5C4573] dark:text-[#C5B4DA] font-sans pt-1">
+                    <span className="font-semibold text-[#3B1E54] dark:text-purple-200">Daily Action Guidance: </span>
+                    <span>{activeCard.guidance}</span>
+                  </div>
 
-              {/* Direct Booking CTA with Approved Brief Prices */}
-              <div className="pt-4 border-t border-purple-100 dark:border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div className="space-y-0.5 text-center sm:text-left">
-                  <span className="font-serif text-sm text-[#241734] dark:text-[#F5EEFA] font-medium block">
-                    Looking for a comprehensive 1:1 reading?
-                  </span>
-                  <span className="text-xs font-sans text-[#5C4573] dark:text-[#C5B4DA] block">
-                    WhatsApp: ₹3,500 • Call: ₹4,000 • Video: ₹4,500 • In-person: ₹5,500
-                  </span>
+                  {/* WhatsApp Deep Consultation CTA */}
+                  <div className="pt-2">
+                    <a
+                      href={`${BRAND_INFO.contact.whatsappUrl}?text=${encodeURIComponent(`Hello Arti, I drew my birthday card (${activeCard.name} - ${activeCard.theme}) and would like to book a 1:1 Angel Tarot Reading consultation.`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-purple-100 hover:bg-purple-200 dark:bg-white/10 dark:hover:bg-white/15 text-[#3B1E54] dark:text-[#F5EEFA] text-xs font-sans tracking-wide transition-colors"
+                    >
+                      <span>Explore this card deeper with Arti</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </div>
                 </div>
-
-                <a
-                  href={`${BRAND_INFO.contact.whatsappUrl}?text=${encodeURIComponent(`Hello Arti, I drew my birthday card (${activeCard.name} - ${activeCard.theme}) and would like to book a 1:1 Angel Tarot Reading consultation.`)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-[#3B1E54] hover:bg-[#4E286E] text-white dark:bg-[#F5EEFA] dark:text-[#1F0E31] text-xs font-sans uppercase tracking-[0.14em] font-medium transition-all text-center flex items-center justify-center gap-2 cursor-pointer shadow-xs shrink-0"
-                >
-                  <MessageCircle className="w-3.5 h-3.5" />
-                  <span>Book 1:1 Reading via WhatsApp</span>
-                </a>
               </div>
             </div>
           </motion.div>
         </div>
 
-        {/* Modal for Inspecting Cards from the Infinite Carousel */}
+        {/* Modal for Inspecting Cards from the Deck */}
         <AnimatePresence>
           {inspectCard && (
             <motion.div
@@ -491,64 +536,122 @@ export const DailyTarotSection: React.FC = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setInspectCard(null)}
-              className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6"
+              className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
             >
               <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
+                initial={{ scale: 0.95, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.9, opacity: 0 }}
+                exit={{ scale: 0.95, opacity: 0 }}
                 onClick={(e) => e.stopPropagation()}
-                className="max-w-lg w-full bg-[#1A0E28] text-white rounded-3xl overflow-hidden border border-white/10 shadow-2xl p-6 sm:p-8 space-y-5 relative"
+                className="max-w-3xl w-full bg-[#1A0E28] text-white rounded-3xl overflow-hidden border border-white/10 shadow-2xl p-6 sm:p-8 relative my-auto"
               >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-purple-300 block">
-                      Card {inspectCard.number} • {inspectCard.archangel}
-                    </span>
-                    <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal mt-0.5">
-                      {inspectCard.name}
-                    </h3>
-                    <span className="text-xs font-sans text-purple-200 mt-1 block">
-                      Theme: {inspectCard.theme}
-                    </span>
+                {/* Close Button */}
+                <button
+                  type="button"
+                  onClick={() => setInspectCard(null)}
+                  aria-label="Close modal"
+                  className="absolute top-5 right-5 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer text-sm font-mono z-10"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+
+                {/* 2-Column Responsive Layout */}
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 items-center">
+                  {/* Left Column: Full Uncropped Vertical Card */}
+                  <div className="md:col-span-5 flex flex-col items-center">
+                    <div className="w-full max-w-[260px] aspect-[9/16] rounded-2xl overflow-hidden border-2 border-amber-300/60 shadow-2xl bg-black/40 relative">
+                      <picture className="w-full h-full">
+                        {inspectCard.webpImage && <source srcSet={inspectCard.webpImage} type="image/webp" />}
+                        <img
+                          src={inspectCard.image}
+                          alt={inspectCard.name}
+                          className="w-full h-full object-contain bg-black/30"
+                        />
+                      </picture>
+                    </div>
+                    {inspectCard.isAuthenticCard && (
+                      <span className="mt-2 text-[10px] font-mono uppercase tracking-wider text-amber-300/90">
+                        ✦ Authentic Physical Card
+                      </span>
+                    )}
                   </div>
-                  <button
-                    type="button"
-                    onClick={() => setInspectCard(null)}
-                    aria-label="Close modal"
-                    className="p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer text-xs font-mono"
-                  >
-                    ✕
-                  </button>
-                </div>
 
-                <div className="aspect-[16/9] rounded-2xl overflow-hidden border border-white/10">
-                  <img
-                    src={inspectCard.image}
-                    alt={inspectCard.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                  {/* Right Column: Card Channeled Details */}
+                  <div className="md:col-span-7 space-y-4">
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-purple-300 block">
+                          Card {inspectCard.number} • {inspectCard.archangel}
+                        </span>
+                        {inspectCard.suit && (
+                          <span className="px-2 py-0.5 rounded-full bg-white/10 text-[9px] font-mono uppercase text-purple-200">
+                            {inspectCard.suit}
+                          </span>
+                        )}
+                      </div>
+                      <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal mt-0.5">
+                        {inspectCard.name}
+                      </h3>
+                      <span className="text-xs font-sans text-purple-200 mt-1 block">
+                        Theme: {inspectCard.theme}
+                      </span>
+                    </div>
 
-                <div className="space-y-3 text-xs font-sans leading-relaxed text-[#D4C7E3]">
-                  <p>{inspectCard.message}</p>
-                  <div className="p-3 rounded-xl bg-white/5 border border-white/10 font-serif italic text-purple-100">
-                    “{inspectCard.affirmation}”
+                    {/* Keywords */}
+                    <div className="flex flex-wrap gap-1.5">
+                      {inspectCard.keywords.map((kw, i) => (
+                        <span
+                          key={i}
+                          className="px-2.5 py-0.5 rounded-full border border-white/10 bg-white/5 text-[10px] font-sans text-purple-100"
+                        >
+                          ✦ {kw}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Channeled Message */}
+                    <div className="space-y-1 text-xs sm:text-sm font-sans leading-relaxed text-[#D4C7E3]">
+                      <span className="text-[10px] font-mono uppercase tracking-wider text-purple-300 block">
+                        Channeled Message:
+                      </span>
+                      <p>{inspectCard.message}</p>
+                    </div>
+
+                    {/* Affirmation */}
+                    <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 font-serif italic text-xs sm:text-sm text-purple-100 leading-snug">
+                      “{inspectCard.affirmation}”
+                    </div>
+
+                    {/* Guidance */}
+                    <div className="text-xs font-sans text-[#D4C7E3]">
+                      <span className="text-purple-300 font-medium">Sacred Action: </span>
+                      <span>{inspectCard.guidance}</span>
+                    </div>
+
+                    {/* Actions */}
+                    <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setInspectCard(null);
+                          const el = document.getElementById('daily-tarot');
+                          if (el) el.scrollIntoView({ behavior: 'smooth' });
+                        }}
+                        className="w-full sm:flex-1 py-2.5 rounded-full bg-[#F5EEFA] text-[#1F0E31] text-xs font-sans uppercase tracking-[0.14em] font-medium text-center cursor-pointer hover:bg-white transition-colors"
+                      >
+                        Calculate My Birthdate
+                      </button>
+
+                      <a
+                        href={`${BRAND_INFO.contact.whatsappUrl}?text=${encodeURIComponent(`Hello Arti, I am exploring your Angel Tarot Deck and resonated with ${inspectCard.name} (${inspectCard.theme}). I would like to book a 1:1 session.`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full sm:w-auto px-4 py-2.5 rounded-full border border-amber-300/50 hover:bg-amber-300/10 text-amber-200 text-xs font-sans tracking-wide transition-colors text-center"
+                      >
+                        Book 1:1 Consultation
+                      </a>
+                    </div>
                   </div>
-                </div>
-
-                <div className="pt-2 flex items-center gap-3">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setInspectCard(null);
-                      const el = document.getElementById('daily-tarot');
-                      if (el) el.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    className="flex-1 py-2.5 rounded-full bg-[#F5EEFA] text-[#1F0E31] text-xs font-sans uppercase tracking-[0.14em] font-medium text-center cursor-pointer"
-                  >
-                    Draw My Birthdate Card
-                  </button>
                 </div>
               </motion.div>
             </motion.div>
