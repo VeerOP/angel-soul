@@ -2,9 +2,8 @@ import React, { useState, useId, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, Heart, Compass, RotateCw, X, ExternalLink } from 'lucide-react';
 import {
-  ANGEL_TAROT_CARDS,
   AUTHENTIC_DECK_CARDS,
-  ALL_ANGEL_TAROT_CARDS,
+  AUTHENTIC_MAJOR_ARCANA,
   calculateBirthAndDailyTarot,
   TarotNumerologyResult
 } from '../../data/dailyTarotData';
@@ -16,7 +15,7 @@ const MONTH_NAMES = [
   'July', 'August', 'September', 'October', 'November', 'December'
 ];
 
-type DeckFilter = 'all' | 'authentic' | 'major' | 'cups' | 'pentacles' | 'swords' | 'wands';
+type DeckFilter = 'all' | 'major' | 'cups' | 'pentacles' | 'swords' | 'wands';
 
 export const DailyTarotSection: React.FC = () => {
   const [birthDay, setBirthDay] = useState<number>(() => {
@@ -81,10 +80,9 @@ export const DailyTarotSection: React.FC = () => {
     setInspectCard(card);
   };
 
-  // Filtered cards for marquee and explorer
-  const filteredCards = ALL_ANGEL_TAROT_CARDS.filter((card) => {
+  // Filtered cards for marquee and explorer (100% authentic deck cards)
+  const filteredCards = AUTHENTIC_DECK_CARDS.filter((card) => {
     if (deckFilter === 'all') return true;
-    if (deckFilter === 'authentic') return card.isAuthenticCard;
     if (deckFilter === 'major') return card.suit === 'Major Arcana';
     if (deckFilter === 'cups') return card.suit === 'Cups';
     if (deckFilter === 'pentacles') return card.suit === 'Pentacles';
@@ -135,13 +133,12 @@ export const DailyTarotSection: React.FC = () => {
             {/* Filter Pills */}
             <div className="flex flex-wrap items-center gap-1.5">
               {[
-                { id: 'all', label: `All (${ALL_ANGEL_TAROT_CARDS.length})` },
-                { id: 'authentic', label: `Physical Deck (${AUTHENTIC_DECK_CARDS.length})` },
-                { id: 'major', label: `Major Arcana (${ANGEL_TAROT_CARDS.length})` },
-                { id: 'cups', label: 'Cups' },
-                { id: 'pentacles', label: 'Pentacles' },
-                { id: 'swords', label: 'Swords' },
-                { id: 'wands', label: 'Wands' }
+                { id: 'all', label: `All (${AUTHENTIC_DECK_CARDS.length})` },
+                { id: 'major', label: `Major Arcana (${AUTHENTIC_MAJOR_ARCANA.length})` },
+                { id: 'cups', label: `Cups (${AUTHENTIC_DECK_CARDS.filter(c => c.suit === 'Cups').length})` },
+                { id: 'pentacles', label: `Pentacles (${AUTHENTIC_DECK_CARDS.filter(c => c.suit === 'Pentacles').length})` },
+                { id: 'swords', label: `Swords (${AUTHENTIC_DECK_CARDS.filter(c => c.suit === 'Swords').length})` },
+                { id: 'wands', label: `Wands (${AUTHENTIC_DECK_CARDS.filter(c => c.suit === 'Wands').length})` }
               ].map((tab) => (
                 <button
                   key={tab.id}
@@ -190,10 +187,10 @@ export const DailyTarotSection: React.FC = () => {
                       {card.number}
                     </div>
 
-                    {/* Authentic Deck Tag */}
-                    {card.isAuthenticCard && (
-                      <div className="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded-full bg-amber-500/90 text-white font-mono text-[8px] tracking-wider uppercase font-semibold">
-                        Physical
+                    {/* Suit Badge */}
+                    {card.suit && (
+                      <div className="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded-full bg-black/75 text-amber-200/90 font-mono text-[8px] tracking-wider uppercase border border-amber-300/20 backdrop-blur-xs">
+                        {card.suit}
                       </div>
                     )}
                   </div>
@@ -446,9 +443,9 @@ export const DailyTarotSection: React.FC = () => {
                       <span className="px-2 py-0.5 rounded-full bg-purple-100 dark:bg-white/10 text-[10px] font-mono uppercase text-[#3B1E54] dark:text-[#F5EEFA]">
                         Card {activeCard.number}
                       </span>
-                      {activeCard.isAuthenticCard && (
-                        <span className="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-700 dark:text-amber-300 text-[10px] font-mono uppercase border border-amber-400/40">
-                          Physical Deck
+                      {activeCard.suit && (
+                        <span className="px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-800 dark:text-amber-300 text-[10px] font-mono uppercase border border-amber-400/30">
+                          {activeCard.suit}
                         </span>
                       )}
                     </div>

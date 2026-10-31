@@ -133,7 +133,7 @@ export const HEALING_MODALITIES: HealingModality[] = [
     description: 'Scanning your energy to understand current emotional and energetic patterns and identify areas requiring support.',
     benefits: ['Pinpoint blockages', 'Understand your energy', 'Baseline for personalised healing'],
     combinedWith: ['All modalities'],
-    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80'
+    image: getAssetUrl('/images/products/holistic-altar-hero.jpg')
   },
   {
     id: 'reiki-healing',
@@ -143,7 +143,7 @@ export const HEALING_MODALITIES: HealingModality[] = [
     description: 'Channeling universal energy to restore balance, release stress, and promote emotional and energetic well-being.',
     benefits: ['Stress release', 'Energetic balance', 'Peace and calm'],
     combinedWith: ['Chakra Healing', 'Crystal Healing'],
-    image: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80'
+    image: getAssetUrl('/images/products/sacred-crystals.jpg')
   },
   {
     id: 'pranic-healing',
@@ -153,7 +153,7 @@ export const HEALING_MODALITIES: HealingModality[] = [
     description: 'Cleansing congested energies from chakras and projecting fresh life energy to harmonize the energy body.',
     benefits: ['Aura cleansing', 'Chakra balancing', 'Renewed vitality'],
     combinedWith: ['Aura Cleansing', 'Chakra Healing'],
-    image: 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80'
+    image: getAssetUrl('/images/products/all-products-altar.jpg')
   },
   {
     id: 'crystal-healing',
@@ -163,7 +163,7 @@ export const HEALING_MODALITIES: HealingModality[] = [
     description: 'Working with natural energized crystals to support energetic alignment, grounding, and healing intentions.',
     benefits: ['Grounding', 'Energetic resonance', 'Chakra alignment'],
     combinedWith: ['Reiki', 'Chakra Healing'],
-    image: 'https://images.unsplash.com/photo-1567225557594-88d73e55f2cb?auto=format&fit=crop&w=800&q=80'
+    image: getAssetUrl('/images/products/sacred-crystals.jpg')
   },
   {
     id: 'akashic-reading-healing',
@@ -173,7 +173,7 @@ export const HEALING_MODALITIES: HealingModality[] = [
     description: 'Accessing soul records to understand deeper patterns, karmic dynamics, and energetic lessons across lifetimes.',
     benefits: ['Understanding soul patterns', 'Resolving repetitive blocks', 'Deep spiritual clarity'],
     combinedWith: ['Cord Cutting', 'Spiritual Guidance'],
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80'
+    image: getAssetUrl('/images/tarot/the-star.jpg')
   },
   {
     id: 'chakra-healing',
@@ -183,7 +183,7 @@ export const HEALING_MODALITIES: HealingModality[] = [
     description: 'Focused healing and balancing across the chakras to clear blockages and restore harmonious flow.',
     benefits: ['Chakra realignment', 'Emotional stability', 'Renewed vitality'],
     combinedWith: ['Energy Scan', 'Reiki'],
-    image: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=800&q=80'
+    image: getAssetUrl('/images/products/energy-bracelet-chakra.jpg')
   },
   {
     id: 'manifestation-intention-work',
@@ -193,7 +193,7 @@ export const HEALING_MODALITIES: HealingModality[] = [
     description: 'Practices to clear inner resistance and align your energy and mindset with your true goals and intentions.',
     benefits: ['Clarity of intention', 'Clearing resistance', 'Focused manifestation'],
     combinedWith: ['Vision Board Work'],
-    image: 'https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=800&q=80'
+    image: getAssetUrl('/images/tarot/wheel-of-fortune.jpg')
   },
   {
     id: 'access-bars',
@@ -203,7 +203,7 @@ export const HEALING_MODALITIES: HealingModality[] = [
     description: 'Gentle touch on 32 points on the head to release electromagnetic charge and mental conditioning.',
     benefits: ['Mental lightness', 'Releasing conditioned limitations', 'Deep relaxation'],
     combinedWith: ['Hypnotherapy'],
-    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80'
+    image: getAssetUrl('/images/products/holistic-altar-hero.jpg')
   },
   {
     id: 'cord-cutting-relationship-healing',
@@ -213,7 +213,7 @@ export const HEALING_MODALITIES: HealingModality[] = [
     description: 'Releasing draining energetic cords and emotional attachments to restore your energy and healthy boundaries.',
     benefits: ['Emotional release', 'Energetic sovereignty', 'Relationship peace'],
     combinedWith: ['Aura Cleansing', 'Akashic Healing'],
-    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80'
+    image: getAssetUrl('/images/tarot/the-lovers.jpg')
   },
   {
     id: 'hypnotherapy',
@@ -223,7 +223,7 @@ export const HEALING_MODALITIES: HealingModality[] = [
     description: 'Working with the subconscious mind to uncover root emotional patterns and support positive transformation.',
     benefits: ['Subconscious healing', 'Overcoming mental blocks', 'Self-awareness'],
     combinedWith: ['Access Bars'],
-    image: 'https://images.unsplash.com/photo-1516307365426-bea591f05011?auto=format&fit=crop&w=800&q=80'
+    image: getAssetUrl('/images/tarot/the-moon.jpg')
   },
   {
     id: 'aura-cleansing-energy-healing',
@@ -233,7 +233,7 @@ export const HEALING_MODALITIES: HealingModality[] = [
     description: 'Cleansing the energetic field from external negativity, emotional residue, and daily fatigue.',
     benefits: ['Feeling lighter', 'Clear energy field', 'Refreshed presence'],
     combinedWith: ['Aura Cleansing Salt', 'Energy Protection'],
-    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80'
+    image: getAssetUrl('/images/products/aura-cleansing-salt.jpg')
   },
   {
     id: 'energy-protection',
@@ -243,7 +243,7 @@ export const HEALING_MODALITIES: HealingModality[] = [
     description: 'Techniques and energy practices to protect sensitive individuals and prevent absorbing external negativity.',
     benefits: ['Boundary protection', 'Preserving vitality', 'Emotional shielding'],
     combinedWith: ['Energy Sprays', 'Aura Cleansing'],
-    image: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80'
+    image: getAssetUrl('/images/tarot/strength.jpg')
   },
   {
     id: 'light-codes-activation',
@@ -253,7 +253,7 @@ export const HEALING_MODALITIES: HealingModality[] = [
     description: 'Working with subtle spiritual frequencies to activate higher awareness and inner spiritual connection.',
     benefits: ['Spiritual elevation', 'Expanded awareness', 'Inner connection'],
     combinedWith: ['Spiritual Guidance'],
-    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80'
+    image: getAssetUrl('/images/tarot/renewal.jpg')
   },
   {
     id: 'spiritual-guidance',
@@ -273,7 +273,7 @@ export const HEALING_MODALITIES: HealingModality[] = [
     description: 'Structuring your goals and visualising the life you want to consciously create through guided intention work.',
     benefits: ['Visual clarity', 'Goal alignment', 'Focused motivation'],
     combinedWith: ['Manifestation & Intention Work'],
-    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80'
+    image: getAssetUrl('/images/tarot/the-chariot.jpg')
   }
 ];
 
@@ -343,7 +343,7 @@ export const SESSIONS_OFFERINGS: SessionOffering[] = [
       { format: 'Per Session', price: 6000, note: 'A 3-session process may be recommended' }
     ],
     benefits: ['Soul records inquiry', 'Karmic pattern release'],
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80'
+    image: getAssetUrl('/images/tarot/the-star.jpg')
   },
   {
     id: 'akashic-healing',
@@ -357,7 +357,7 @@ export const SESSIONS_OFFERINGS: SessionOffering[] = [
       { format: 'Per Session', price: 5000, note: 'Minimum 3-session process recommended where required' }
     ],
     benefits: ['Soul-level healing', 'Deep energetic clearing'],
-    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80'
+    image: getAssetUrl('/images/tarot/renewal.jpg')
   },
   {
     id: 'chakra-healing',
@@ -372,7 +372,7 @@ export const SESSIONS_OFFERINGS: SessionOffering[] = [
       { format: 'Session', price: 3500, note: 'Recommended after Energy Scan' }
     ],
     benefits: ['Chakra alignment', 'Recommended after Energy Scan'],
-    image: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=800&q=80'
+    image: getAssetUrl('/images/products/energy-bracelet-chakra.jpg')
   },
   {
     id: 'cord-cutting-relationship-healing',
@@ -386,7 +386,7 @@ export const SESSIONS_OFFERINGS: SessionOffering[] = [
       { format: '30 minutes', price: 6000, duration: '30 minutes' }
     ],
     benefits: ['30 minutes focused session', 'Releasing negative cords'],
-    image: 'https://images.unsplash.com/photo-1516307365426-bea591f05011?auto=format&fit=crop&w=800&q=80'
+    image: getAssetUrl('/images/tarot/the-lovers.jpg')
   },
   {
     id: 'access-bars',
@@ -399,7 +399,7 @@ export const SESSIONS_OFFERINGS: SessionOffering[] = [
       { format: 'Per Session', price: 6000 }
     ],
     benefits: ['Releasing mental charge', 'Deep relaxation'],
-    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80'
+    image: getAssetUrl('/images/products/holistic-altar-hero.jpg')
   },
   {
     id: 'house-energy-scan-cleansing',
@@ -413,7 +413,7 @@ export const SESSIONS_OFFERINGS: SessionOffering[] = [
       { format: 'Starting from ₹8,000', price: 8000, note: 'Depends on size and requirement' }
     ],
     benefits: ['Space clearing', 'Clearing heavy or stagnant energies'],
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'
+    image: getAssetUrl('/images/retreats/karjat-retreat-sanctuary.jpg')
   },
   {
     id: 'transformation-healing',
@@ -427,7 +427,7 @@ export const SESSIONS_OFFERINGS: SessionOffering[] = [
       { format: 'Customised', price: 0, note: 'Determined after Energy Scan' }
     ],
     benefits: ['Personalised combination of modalities', 'Begins with Energy Scan'],
-    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80'
+    image: getAssetUrl('/images/products/all-products-altar.jpg')
   }
 ];
 
@@ -605,76 +605,139 @@ export const TESTIMONIAL_QUOTE = {
 };
 
 export const GALLERY_ITEMS: GalleryItem[] = [
+  // --- SANCTUARY (6 items) ---
   {
-    id: 'gal-arti',
-    title: 'Arti Bhadra – Founder of Angel Soul',
-    category: 'Sessions',
-    caption: 'Holistic & Transformational Healer and Spiritual Guide leading personalised healing sessions.',
-    image: getAssetUrl('/images/arti/arti-bhadra-portrait.jpg')
-  },
-  {
-    id: 'gal-1',
+    id: 'gal-sanc-1',
     title: 'Holistic Offerings Altar',
     category: 'Sanctuary',
-    caption: 'Sacred sanctuary space with consecrations, aura salt, and crystal energy.',
+    caption: 'Sacred altar space consecrated with candles, aura salt, and crystal energy.',
     image: getAssetUrl('/images/products/holistic-altar-hero.jpg')
   },
   {
-    id: 'gal-2',
-    title: 'Angel Tarot Sacred Reading',
-    category: 'Sessions',
-    caption: 'Gold-gilded Angel Tarot cards channeling divine guidance with Archangels Michael, Gabriel and Raphael.',
+    id: 'gal-sanc-2',
+    title: 'Nature Sanctuary at Aamantara Villa',
+    category: 'Sanctuary',
+    caption: 'Serene outdoor healing sanctuary surrounded by lush Karjat greenery and tranquil mountain air.',
+    image: getAssetUrl('/images/retreats/karjat-retreat-sanctuary.jpg')
+  },
+  {
+    id: 'gal-sanc-3',
+    title: 'Angel Tarot Sacred Space',
+    category: 'Sanctuary',
+    caption: 'Quiet intuitive reflection altar with candles, clear quartz, and archangel guidance.',
     image: getAssetUrl('/images/products/angel-tarot-reading-altar.jpg')
   },
   {
-    id: 'gal-3',
-    title: 'Personalised Energy Bracelet (Chakra)',
-    category: 'Crystals & Products',
-    caption: 'Personalised according to Date of Birth, current energies, and sacred alignment.',
-    image: getAssetUrl('/images/products/energy-bracelet-chakra.jpg')
-  },
-  {
-    id: 'gal-4',
-    title: 'Aura Cleansing Salt',
-    category: 'Crystals & Products',
-    caption: 'Cleanse • Protect • Renew. Crafted with natural salts, dried botanicals, and raw amethyst.',
-    image: getAssetUrl('/images/products/aura-cleansing-salt.jpg')
-  },
-  {
-    id: 'gal-5',
-    title: 'Consecrated Energy Sprays (10 ml)',
-    category: 'Crystals & Products',
-    caption: 'Sacred intention mists (10 ml): Aura Cleansing, Protection, Love, Abundance, Prosperity & Road Opener.',
+    id: 'gal-sanc-4',
+    title: 'Consecrated Energy Mist Altar',
+    category: 'Sanctuary',
+    caption: 'Sacred healing sprays and natural raw crystals charged in deep meditation.',
     image: getAssetUrl('/images/products/energy-sprays-100ml.jpg')
   },
   {
-    id: 'gal-6',
-    title: 'Labradorite Palm Stone & Tumbles',
-    category: 'Crystals & Products',
-    caption: 'Natural energized crystals: Peacock-flash Labradorite palm stone with amethyst and quartz tumbles.',
+    id: 'gal-sanc-5',
+    title: 'Holistic Energy Toolset',
+    category: 'Sanctuary',
+    caption: 'Complete collection of consecrated aura salts, crystal bracelets, and energetic sprays.',
+    image: getAssetUrl('/images/products/all-products-altar.jpg')
+  },
+  {
+    id: 'gal-sanc-6',
+    title: 'Master Healer Crystal Space',
+    category: 'Sanctuary',
+    caption: 'Peacock-flash labradorite palm stone, raw amethyst cluster, and rainbow fluorite.',
     image: getAssetUrl('/images/products/sacred-crystals.jpg')
   },
+
+  // --- RETREATS (6 items) ---
   {
-    id: 'gal-7',
-    title: 'Citrine & Tiger’s Eye Sun Bracelet',
-    category: 'Crystals & Products',
-    caption: 'Energized crystal bracelet aligned for abundance, confidence, and solar plexus vitality.',
-    image: getAssetUrl('/images/products/energy-bracelet-citrine.jpg')
-  },
-  {
-    id: 'gal-8',
-    title: 'Jade & Hematite Grounding Bracelet',
-    category: 'Crystals & Products',
-    caption: 'Protective and heart-balancing natural stone bracelet custom attuned to the wearer.',
-    image: getAssetUrl('/images/products/energy-bracelet-jade.jpg')
-  },
-  {
-    id: 'gal-9',
-    title: 'Meet Little Me Retreat at Aamantara Villa, Karjat',
+    id: 'gal-ret-1',
+    title: 'Meet Little Me Retreat • Karjat',
     category: 'Retreats',
-    caption: 'Angel Soul × Parvat Buddies retreat sanctuary at Aamantara Villa in lush Karjat.',
+    caption: 'Angel Soul × Parvat Buddies retreat sanctuary at Aamantara Villa in lush Karjat (Sep 18–20).',
     image: getAssetUrl('/images/retreats/karjat-retreat-sanctuary.jpg')
   },
+  {
+    id: 'gal-ret-2',
+    title: 'Inner Child Meditation Altar',
+    category: 'Retreats',
+    caption: 'Sacred altar arranged for breathwork, sound healing, and emotional release circles.',
+    image: getAssetUrl('/images/products/holistic-altar-hero.jpg')
+  },
+  {
+    id: 'gal-ret-3',
+    title: 'Retreat Auric Clearing Station',
+    category: 'Retreats',
+    caption: 'Consecrated 10ml essential oil mists and crystal cleansing for retreat participants.',
+    image: getAssetUrl('/images/products/energy-sprays-100ml.jpg')
+  },
+  {
+    id: 'gal-ret-4',
+    title: '1:1 Channeled Retreat Readings',
+    category: 'Retreats',
+    caption: 'Personalized card channeling and spiritual mentoring in quiet nature corners.',
+    image: getAssetUrl('/images/products/angel-tarot-reading-altar.jpg')
+  },
+  {
+    id: 'gal-ret-5',
+    title: 'Arti Bhadra • Retreat Guide',
+    category: 'Retreats',
+    caption: 'Founder of Angel Soul holding space for personal breakthroughs and conscious inner child healing.',
+    image: getAssetUrl('/images/arti/arti-bhadra-portrait.jpg')
+  },
+  {
+    id: 'gal-ret-6',
+    title: 'Consecrated Retreat Blessings',
+    category: 'Retreats',
+    caption: 'Blessed crystals and handcrafted energetic tools gifted to retreat attendees.',
+    image: getAssetUrl('/images/products/all-products-altar.jpg')
+  },
+
+  // --- SESSIONS (6 items) ---
+  {
+    id: 'gal-sess-1',
+    title: 'Arti Bhadra • Sacred Healer',
+    category: 'Sessions',
+    caption: 'Founder of Angel Soul holding compassionate presence during 1:1 intuitive healing sessions.',
+    image: getAssetUrl('/images/arti/arti-bhadra-portrait.jpg')
+  },
+  {
+    id: 'gal-sess-2',
+    title: 'Angel Tarot Channeled Reading',
+    category: 'Sessions',
+    caption: 'Channeled card layout with authentic gold-gilded deck and archangel frequencies.',
+    image: getAssetUrl('/images/products/angel-tarot-reading-altar.jpg')
+  },
+  {
+    id: 'gal-sess-3',
+    title: 'Holistic Energy Scanning',
+    category: 'Sessions',
+    caption: 'Pinpointing emotional and physical blockages to establish a foundation for healing.',
+    image: getAssetUrl('/images/products/holistic-altar-hero.jpg')
+  },
+  {
+    id: 'gal-sess-4',
+    title: 'Spiritual Wisdom & Guidance',
+    category: 'Sessions',
+    caption: 'Archangel Sandalphon – Spiritual Wisdom & Answered Prayers. Channeled guidance.',
+    image: getAssetUrl('/images/tarot/the-hierophant.jpg')
+  },
+  {
+    id: 'gal-sess-5',
+    title: 'Heart Alignment & Cord Cutting',
+    category: 'Sessions',
+    caption: 'Archangel Chamuel – Unconditional Love. Severing draining cords to restore self-worth.',
+    image: getAssetUrl('/images/tarot/the-lovers.jpg')
+  },
+  {
+    id: 'gal-sess-6',
+    title: 'Aura Cleansing & Energetic Reset',
+    category: 'Sessions',
+    caption: 'Sacred Himalayan salt and amethyst ritual for energetic purification and protection.',
+    image: getAssetUrl('/images/products/aura-cleansing-salt.jpg')
+  },
+
+  // --- ANGEL TAROT (12 items) ---
   {
     id: 'gal-tarot-lovers',
     title: 'VI • The Lovers',
@@ -732,6 +795,20 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     image: getAssetUrl('/images/tarot/the-world.jpg')
   },
   {
+    id: 'gal-tarot-hermit',
+    title: 'IX • The Hermit',
+    category: 'Angel Tarot',
+    caption: 'Archangel Raziel – Soul Search, Wisdom, Solitude. Inner illumination.',
+    image: getAssetUrl('/images/tarot/the-hermit.jpg')
+  },
+  {
+    id: 'gal-tarot-wheel',
+    title: 'X • Wheel of Fortune',
+    category: 'Angel Tarot',
+    caption: 'Archangel Jeremiel – Change, Cycle, Destiny. Divine timing in motion.',
+    image: getAssetUrl('/images/tarot/wheel-of-fortune.jpg')
+  },
+  {
     id: 'gal-tarot-cups',
     title: 'Six of Cups • Heart Innocence',
     category: 'Angel Tarot',
@@ -744,6 +821,64 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Angel Tarot',
     caption: 'Suit of Pentacles – I Am My Own Fortress, I Hoard My Strength. Sacred boundary affirmation.',
     image: getAssetUrl('/images/tarot/four-of-pentacles-affirmation.jpg')
+  },
+
+  // --- CRYSTALS & PRODUCTS (8 items) ---
+  {
+    id: 'gal-prod-chakra',
+    title: 'Chakra Balancing Crystal Bracelet',
+    category: 'Crystals & Products',
+    caption: 'Personalised according to Date of Birth, current energies, and sacred alignment.',
+    image: getAssetUrl('/images/products/energy-bracelet-chakra.jpg')
+  },
+  {
+    id: 'gal-prod-salt',
+    title: 'Aura Cleansing Himalayan Salt',
+    category: 'Crystals & Products',
+    caption: 'Cleanse • Protect • Renew. Crafted with natural salts, dried botanicals, and raw amethyst.',
+    image: getAssetUrl('/images/products/aura-cleansing-salt.jpg')
+  },
+  {
+    id: 'gal-prod-sprays',
+    title: 'Consecrated Energy Sprays (10 ml)',
+    category: 'Crystals & Products',
+    caption: 'Sacred intention mists (10 ml): Aura Cleansing, Protection, Love, Abundance, Prosperity & Road Opener.',
+    image: getAssetUrl('/images/products/energy-sprays-100ml.jpg')
+  },
+  {
+    id: 'gal-prod-crystals',
+    title: 'Labradorite Palm Stone & Tumbles',
+    category: 'Crystals & Products',
+    caption: 'Natural energized crystals: Peacock-flash Labradorite palm stone with amethyst and quartz tumbles.',
+    image: getAssetUrl('/images/products/sacred-crystals.jpg')
+  },
+  {
+    id: 'gal-prod-citrine',
+    title: 'Citrine & Tiger’s Eye Sun Bracelet',
+    category: 'Crystals & Products',
+    caption: 'Energized crystal bracelet aligned for abundance, confidence, and solar plexus vitality.',
+    image: getAssetUrl('/images/products/energy-bracelet-citrine.jpg')
+  },
+  {
+    id: 'gal-prod-jade',
+    title: 'Jade & Hematite Grounding Bracelet',
+    category: 'Crystals & Products',
+    caption: 'Protective and heart-balancing natural stone bracelet custom attuned to the wearer.',
+    image: getAssetUrl('/images/products/energy-bracelet-jade.jpg')
+  },
+  {
+    id: 'gal-prod-altar',
+    title: 'Complete Sacred Altar Collection',
+    category: 'Crystals & Products',
+    caption: 'All handcrafted holistic products together on the sacred altar.',
+    image: getAssetUrl('/images/products/all-products-altar.jpg')
+  },
+  {
+    id: 'gal-prod-showcase',
+    title: 'Consecrated Product Grid Showcase',
+    category: 'Crystals & Products',
+    caption: 'Curated display of consecrated energy bracelets, aura salts, and archangel sprays.',
+    image: getAssetUrl('/images/products/products-grid-showcase.png')
   }
 ];
 

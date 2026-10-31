@@ -1,82 +1,10 @@
 import { DailyTarotCard } from '../types';
 import { getAssetUrl } from '../utils/assetUrl';
 
-export const ANGEL_TAROT_CARDS: DailyTarotCard[] = [
-  {
-    id: 'tarot-0',
-    number: '0',
-    name: 'The Dreamer',
-    archangel: 'Archangel Metatron',
-    theme: 'Pure Potential & Sacred Leaps',
-    keywords: ['New Chapter', 'Trust', 'Innocence', 'Leap of Faith'],
-    element: 'Air / Ether',
-    suit: 'Major Arcana',
-    image: getAssetUrl('/images/tarot/the-dreamer.jpg'),
-    webpImage: getAssetUrl('/images/tarot/the-dreamer.webp'),
-    message: 'Embrace your sacred journey with childlike wonder. The universe is inviting you to release overthinking and step boldly onto a brand new path.',
-    affirmation: 'I release past limitations and lovingly step forward into my highest divine potential.',
-    guidance: 'Today is asking you to trust your intuitive spark. Even if you cannot see the entire staircase, take the first gentle step with open arms.'
-  },
-  {
-    id: 'tarot-1',
-    number: 'I',
-    name: 'The Magician',
-    archangel: 'Archangel Raziel',
-    theme: 'Conscious Manifestation & Divine Resources',
-    keywords: ['Empowerment', 'Focus', 'Manifestation', 'Alignment'],
-    element: 'Air / Fire',
-    suit: 'Major Arcana',
-    image: getAssetUrl('/images/tarot/the-magician.jpg'),
-    webpImage: getAssetUrl('/images/tarot/the-magician.webp'),
-    message: 'Everything you need to create positive shifts is already within your energetic reach. Align your conscious thoughts with your heart’s true purpose.',
-    affirmation: 'I am a conscious creator of my reality. My energy attracts blessings, clarity, and grace.',
-    guidance: 'Channel your energy with singular intention today. Focus on what you wish to bring into existence rather than what is falling away.'
-  },
-  {
-    id: 'tarot-2',
-    number: 'II',
-    name: 'The High Priestess',
-    archangel: 'Archangel Haniel',
-    theme: 'Intuitive Wisdom & The Sacred Feminine',
-    keywords: ['Inner Knowing', 'Mysticism', 'Subconscious', 'Grace'],
-    element: 'Water',
-    suit: 'Major Arcana',
-    image: getAssetUrl('/images/tarot/the-high-priestess.jpg'),
-    webpImage: getAssetUrl('/images/tarot/the-high-priestess.webp'),
-    message: 'Look beyond surface appearances. Your soul possesses deep intuitive wisdom that cannot be accessed through logic alone.',
-    affirmation: 'I quiet my mind and listen reverently to the quiet voice of my inner guidance.',
-    guidance: 'Take moments of solitude today. An intuitive insight or dream is waiting to reveal your next emotional and spiritual breakthrough.'
-  },
-  {
-    id: 'tarot-3',
-    number: 'III',
-    name: 'The Empress',
-    archangel: 'Archangel Gabriel',
-    theme: 'Divine Nurturance, Creativity & Abundance',
-    keywords: ['Abundance', 'Fertility of Ideas', 'Self-Care', 'Expansion'],
-    element: 'Earth',
-    suit: 'Major Arcana',
-    image: getAssetUrl('/images/tarot/the-empress.jpg'),
-    webpImage: getAssetUrl('/images/tarot/the-empress.webp'),
-    message: 'You are worthy of receiving kindness, comfort, and rich abundance. Allow yourself to be nurtured just as deeply as you nurture others.',
-    affirmation: 'I open my heart to receive universal blessings and hold gentle love for myself.',
-    guidance: 'Engage in grounding self-care today. Treat your body and mind as a sacred altar, allowing fresh creative inspirations to take root.'
-  },
-  {
-    id: 'tarot-4',
-    number: 'IV',
-    name: 'The Emperor',
-    archangel: 'Archangel Michael',
-    theme: 'Divine Protection, Structure & Boundaries',
-    keywords: ['Protection', 'Healthy Boundaries', 'Stability', 'Inner Sovereignty'],
-    element: 'Fire',
-    suit: 'Major Arcana',
-    image: getAssetUrl('/images/tarot/the-emperor.jpg'),
-    webpImage: getAssetUrl('/images/tarot/the-emperor.webp'),
-    message: 'Archangel Michael surrounds your energy field with a shield of golden light. Reclaim your personal sovereignty and establish healthy boundaries.',
-    affirmation: 'I am safe, protected, and grounded. My boundaries honor my soul and vitality.',
-    guidance: 'Identify areas where your energy is being drained. Speak your truth with loving firmness and stand secure in your spiritual integrity.'
-  },
+/**
+ * Authentic Major Arcana Cards photographed from the Angel Soul sacred deck (final images)
+ */
+export const AUTHENTIC_MAJOR_ARCANA: DailyTarotCard[] = [
   {
     id: 'tarot-5',
     number: 'V',
@@ -190,81 +118,6 @@ export const ANGEL_TAROT_CARDS: DailyTarotCard[] = [
     guidance: 'Be truthful with yourself about what is working and what is not in your life. Honest recognition is the prerequisite for authentic healing.'
   },
   {
-    id: 'tarot-12',
-    number: 'XII',
-    name: 'Awakening',
-    archangel: 'Archangel Chamuel',
-    theme: 'Higher Perspective, Surrender & Peaceful Pause',
-    keywords: ['Surrender', 'Shift in Viewpoint', 'Patience', 'Deep Release'],
-    element: 'Water',
-    suit: 'Major Arcana',
-    image: getAssetUrl('/images/tarot/awakening.jpg'),
-    webpImage: getAssetUrl('/images/tarot/awakening.webp'),
-    message: 'Release the urge to control the outcome. By pausing and looking at your situation from a higher angle, profound liberation will occur.',
-    affirmation: 'I surrender resistance and trust the higher plan unfolding for my soul.',
-    guidance: 'If a project or conversation feels blocked, step back. Allow things to breathe. Solutions will arrive effortlessly once you cease forcing.'
-  },
-  {
-    id: 'tarot-13',
-    number: 'XIII',
-    name: 'Transformation',
-    archangel: 'Archangel Azrael',
-    theme: 'Sacred Rebirth & Releasing What No Longer Serves',
-    keywords: ['Rebirth', 'Closure', 'Metamorphosis', 'Fresh Start'],
-    element: 'Water',
-    suit: 'Major Arcana',
-    image: getAssetUrl('/images/tarot/transformation.jpg'),
-    webpImage: getAssetUrl('/images/tarot/transformation.webp'),
-    message: 'Do not fear endings; they are the fertile soil from which your highest transformation blooms. Release with gratitude and welcome your rebirth.',
-    affirmation: 'I courageously release what no longer serves me. I welcome the vibrant new version of myself.',
-    guidance: 'Perform a small physical or emotional declutter today. Cleanse your space with intention, honoring what was while stepping into the new.'
-  },
-  {
-    id: 'tarot-14',
-    number: 'XIV',
-    name: 'Peace & Balance',
-    archangel: 'Archangel Zadkiel',
-    theme: 'Spiritual Alchemy, Moderation & Forgiveness',
-    keywords: ['Harmony', 'Alchemy', 'Grace', 'Forgiveness'],
-    element: 'Fire / Water',
-    suit: 'Major Arcana',
-    image: getAssetUrl('/images/tarot/peace-balance.jpg'),
-    webpImage: getAssetUrl('/images/tarot/peace-balance.webp'),
-    message: 'Archangel Zadkiel extends the violet flame of compassion and emotional balance. Blend patience, diplomacy, and forgiveness into your heart.',
-    affirmation: 'I forgive the past, release resentment, and embody tranquil inner harmony.',
-    guidance: 'Avoid extremes today. Strive for balanced eating, balanced emotional responses, and gentle words in all your interactions.'
-  },
-  {
-    id: 'tarot-15',
-    number: 'XV',
-    name: 'Freedom',
-    archangel: 'Archangel Jophiel',
-    theme: 'Liberation from Limiting Beliefs & Cord Release',
-    keywords: ['Cord Cutting', 'Breaking Chains', 'Liberation', 'Self-Awareness'],
-    element: 'Earth',
-    suit: 'Major Arcana',
-    image: getAssetUrl('/images/tarot/freedom.jpg'),
-    webpImage: getAssetUrl('/images/tarot/freedom.webp'),
-    message: 'Illusions of unworthiness or helplessness are dissolving. You are not trapped by your past or other people’s emotional demands.',
-    affirmation: 'I sever the energetic cords of fear and codependency. I step into radiant freedom.',
-    guidance: 'Notice whenever self-doubt whispers old stories. Affirm your independence and remember how far you have already transformed.'
-  },
-  {
-    id: 'tarot-16',
-    number: 'XVI',
-    name: 'The Tower of Light',
-    archangel: 'Archangel Chamuel',
-    theme: 'Sudden Breakthrough & Awakening to Truth',
-    keywords: ['Epiphany', 'Breakthrough', 'Clearing Illusions', 'Liberating Shift'],
-    element: 'Fire',
-    suit: 'Major Arcana',
-    image: getAssetUrl('/images/tarot/the-tower-of-light.jpg'),
-    webpImage: getAssetUrl('/images/tarot/the-tower-of-light.webp'),
-    message: 'A false limitation or shaky foundation is being lovingly removed by Spirit to protect your future. What shatters is only what was holding you back.',
-    affirmation: 'I welcome sudden epiphanies. The light of truth rebuilds my life on unbreakable foundations.',
-    guidance: 'If unexpected news arrives, recognize the hidden blessing. Trust that divine order is re-routing you to your highest aligned path.'
-  },
-  {
     id: 'tarot-17',
     number: 'XVII',
     name: 'The Star',
@@ -295,21 +148,6 @@ export const ANGEL_TAROT_CARDS: DailyTarotCard[] = [
     message: 'Subconscious emotions, memories, and dreams are rising to be acknowledged and gently released. Move through illusions into clear intuitive revelation.',
     affirmation: 'I honor my feelings, release my shadows into the light, and trust my intuition.',
     guidance: 'Pay attention to your dreams tonight and gut feelings during the day. Cleanse with water or aura salts to release lingering emotional residue.'
-  },
-  {
-    id: 'tarot-19',
-    number: 'XIX',
-    name: 'The Sun',
-    archangel: 'Archangel Uriel',
-    theme: 'Radiant Joy, Vitality & Triumph',
-    keywords: ['Celebration', 'Success', 'Vitality', 'Optimism', 'Warmth'],
-    element: 'Fire',
-    suit: 'Major Arcana',
-    image: getAssetUrl('/images/tarot/the-sun.jpg'),
-    webpImage: getAssetUrl('/images/tarot/the-sun.webp'),
-    message: 'Step out into the warm sunlight of life! Joy, abundance, health, and loving recognition are surrounding you. Celebrate your radiant soul.',
-    affirmation: 'I radiate happiness, good health, and abundant vitality. I am deeply blessed.',
-    guidance: 'Spend time in natural daylight today. Share a warm smile, express heartfelt appreciation, and let yourself revel in simple delights.'
   },
   {
     id: 'tarot-20',
@@ -580,26 +418,53 @@ export const MINOR_ARCANA_CARDS: DailyTarotCard[] = [
 ];
 
 /**
- * All cards from the client's final images physical deck
+ * All cards from the client's final images physical deck (24 authentic items)
+ * Only authentic cards with photographed artwork are included.
  */
 export const AUTHENTIC_DECK_CARDS: DailyTarotCard[] = [
-  ...ANGEL_TAROT_CARDS.filter(c => c.isAuthenticCard),
+  ...AUTHENTIC_MAJOR_ARCANA,
   ...MINOR_ARCANA_CARDS
 ];
 
 /**
- * The complete 36-card Angel Tarot collection
+ * Backwards compatibility alias: ALL Angel Tarot cards are now exclusively authentic deck cards.
  */
-export const ALL_ANGEL_TAROT_CARDS: DailyTarotCard[] = [
-  ...ANGEL_TAROT_CARDS,
-  ...MINOR_ARCANA_CARDS
-];
+export const ALL_ANGEL_TAROT_CARDS: DailyTarotCard[] = AUTHENTIC_DECK_CARDS;
+export const ANGEL_TAROT_CARDS: DailyTarotCard[] = AUTHENTIC_DECK_CARDS;
 
 /**
- * Reduces any positive integer down to a Major Arcana number between 1 and 22
+ * Map of Arcana Numbers (1-22) to authentic Major Arcana cards from the physical deck.
+ * Direct matches for existing physical cards: V(5), VI(6), VII(7), VIII(8), IX(9), X(10), XI(11), XVII(17), XVIII(18), XX(20), XXI(21).
+ * Archetype alignment resonances for the remaining numbers ensure 100% of readings use authentic photographs.
+ */
+const ARCANA_NUMBER_MAP: Record<number, string> = {
+  1: 'tarot-7',   // Manifestation / Will -> VII The Chariot (Archangel Metatron)
+  2: 'tarot-18',  // Intuition / Subconscious -> XVIII The Moon (Archangel Haniel)
+  3: 'tarot-6',   // Love / Creativity -> VI The Lovers (Archangel Chamuel)
+  4: 'tarot-5',   // Sacred Structure / Guidance -> V The Hierophant (Archangel Sandalphon)
+  5: 'tarot-5',   // V The Hierophant
+  6: 'tarot-6',   // VI The Lovers
+  7: 'tarot-7',   // VII The Chariot
+  8: 'tarot-8',   // VIII Strength
+  9: 'tarot-9',   // IX The Hermit
+  10: 'tarot-10', // X Wheel of Fortune
+  11: 'tarot-11', // XI Justice
+  12: 'tarot-9',  // Higher Wisdom / Solitude -> IX The Hermit (Archangel Raziel)
+  13: 'tarot-20', // Rebirth / Metamorphosis -> XX Renewal (Archangel Jeremiel)
+  14: 'tarot-11', // Balance & Harmony -> XI Justice (Archangel Raguel)
+  15: 'tarot-8',  // Inner Resilience & Courage -> VIII Strength (Archangel Ariel)
+  16: 'tarot-10', // Turning Points & Destiny -> X Wheel of Fortune (Archangel Jeremiel)
+  17: 'tarot-17', // XVII The Star
+  18: 'tarot-18', // XVIII The Moon
+  19: 'tarot-17', // Radiance & Divine Hope -> XVII The Star (Archangel Jophiel)
+  20: 'tarot-20', // XX Renewal
+  21: 'tarot-21', // XXI The World
+  22: 'tarot-21'  // Wholeness / Cosmic Completion -> XXI The World (Archangel Michael)
+};
+
+/**
+ * Reduces any positive integer down to a Tarot number between 1 and 22
  * using authentic Tarot Numerology digit reduction.
- * 22 / 0 = The Dreamer (The Fool)
- * 1 = The Magician ... 21 = The World
  */
 export function reduceToTarotNumber(initialNum: number): { reduced: number; steps: string } {
   let num = Math.abs(initialNum);
@@ -616,13 +481,10 @@ export function reduceToTarotNumber(initialNum: number): { reduced: number; step
 }
 
 export function getCardByArcanaNumber(arcanaNumber: number): DailyTarotCard {
-  if (arcanaNumber === 22 || arcanaNumber === 0) {
-    return ANGEL_TAROT_CARDS[0]; // The Dreamer (0/XXII)
-  }
-  if (arcanaNumber >= 1 && arcanaNumber <= 21) {
-    return ANGEL_TAROT_CARDS[arcanaNumber];
-  }
-  return ANGEL_TAROT_CARDS[Math.abs(arcanaNumber) % ANGEL_TAROT_CARDS.length];
+  const norm = arcanaNumber === 0 ? 22 : Math.min(Math.max(arcanaNumber, 1), 22);
+  const targetId = ARCANA_NUMBER_MAP[norm] || 'tarot-21';
+  const found = AUTHENTIC_MAJOR_ARCANA.find((c) => c.id === targetId);
+  return found || AUTHENTIC_MAJOR_ARCANA[0];
 }
 
 export interface TarotNumerologyResult {
@@ -636,7 +498,7 @@ export interface TarotNumerologyResult {
 }
 
 /**
- * Authentic Tarot & Numerology System:
+ * Authentic Tarot & Numerology System using ONLY authentic physical cards:
  * 1. Lifelong Soul / Birth Card:
  *    Calculated from Birth Day + Birth Month + Birth Year reduced to 1–22.
  * 2. Daily Guidance Arcana:
@@ -664,7 +526,10 @@ export function calculateBirthAndDailyTarot(
   const dayVibration = curDay + curMonth + curYear;
   const dailyInitialSum = birthVibration + dayVibration;
   const { reduced: dailyReduced, steps: dailySteps } = reduceToTarotNumber(dailyInitialSum);
-  const dailyCard = getCardByArcanaNumber(dailyReduced);
+  
+  // Use day vibration to cycle across all authentic cards including minor arcana
+  const dailyCardIndex = Math.abs(dailyInitialSum + curDay) % AUTHENTIC_DECK_CARDS.length;
+  const dailyCard = AUTHENTIC_DECK_CARDS[dailyCardIndex];
   const dailyFormula = `DOB (${birthDay}+${birthMonth}) + Today (${curDay}+${curMonth}+${curYear}) = ${dailyInitialSum} → ${dailySteps} (${dailyCard.number} ${dailyCard.name})`;
 
   const formattedToday = targetDate.toLocaleDateString('en-IN', {
@@ -694,7 +559,7 @@ export function getDailyTarotCard(
   targetDate: Date = new Date()
 ): { card: DailyTarotCard; cardIndex: number; formattedToday: string; result: TarotNumerologyResult } {
   const result = calculateBirthAndDailyTarot(birthDay, birthMonth, birthYear, targetDate);
-  const cardIndex = ANGEL_TAROT_CARDS.findIndex((c) => c.id === result.dailyCard.id);
+  const cardIndex = AUTHENTIC_DECK_CARDS.findIndex((c) => c.id === result.dailyCard.id);
 
   return {
     card: result.dailyCard,

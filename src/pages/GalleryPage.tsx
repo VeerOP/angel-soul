@@ -8,7 +8,14 @@ export const GalleryPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [lightboxItem, setLightboxItem] = useState<GalleryItem | null>(null);
 
-  const categories = ['All', 'Sanctuary', 'Sessions', 'Angel Tarot', 'Retreats', 'Crystals & Products'];
+  const categories = [
+    { id: 'All', label: `All (${GALLERY_ITEMS.length})` },
+    { id: 'Sanctuary', label: `Sanctuary (${GALLERY_ITEMS.filter((i) => i.category === 'Sanctuary').length})` },
+    { id: 'Angel Tarot', label: `Angel Tarot (${GALLERY_ITEMS.filter((i) => i.category === 'Angel Tarot').length})` },
+    { id: 'Retreats', label: `Retreats (${GALLERY_ITEMS.filter((i) => i.category === 'Retreats').length})` },
+    { id: 'Sessions', label: `Sessions (${GALLERY_ITEMS.filter((i) => i.category === 'Sessions').length})` },
+    { id: 'Crystals & Products', label: `Crystals & Products (${GALLERY_ITEMS.filter((i) => i.category === 'Crystals & Products').length})` }
+  ];
 
   const filteredItems = GALLERY_ITEMS.filter((item) => {
     if (selectedCategory === 'All') return true;
@@ -43,16 +50,16 @@ export const GalleryPage: React.FC = () => {
           <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
             {categories.map((cat) => (
               <button
-                key={cat}
+                key={cat.id}
                 type="button"
-                onClick={() => setSelectedCategory(cat)}
+                onClick={() => setSelectedCategory(cat.id)}
                 className={`px-4 py-2 rounded-full text-xs font-sans uppercase tracking-[0.1em] transition-all cursor-pointer ${
-                  selectedCategory === cat
+                  selectedCategory === cat.id
                     ? 'bg-[#3B1E54] text-white dark:bg-[#F5EEFA] dark:text-[#1F0E31] shadow-sm'
                     : 'border border-purple-200/80 dark:border-white/10 bg-white/60 dark:bg-white/5 text-[#5C4573] dark:text-purple-200 hover:border-purple-300 hover:bg-purple-50/50'
                 }`}
               >
-                {cat}
+                {cat.label}
               </button>
             ))}
           </div>

@@ -7,7 +7,14 @@ export const GalleryPreview: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [activeImage, setActiveImage] = useState<(typeof GALLERY_ITEMS)[0] | null>(null);
 
-  const categories = ['All', 'Sanctuary', 'Retreats', 'Sessions', 'Crystals & Products'];
+  const categories = [
+    { id: 'All', label: `All (${GALLERY_ITEMS.length})` },
+    { id: 'Sanctuary', label: `Sanctuary (${GALLERY_ITEMS.filter((i) => i.category === 'Sanctuary').length})` },
+    { id: 'Angel Tarot', label: `Angel Tarot (${GALLERY_ITEMS.filter((i) => i.category === 'Angel Tarot').length})` },
+    { id: 'Retreats', label: `Retreats (${GALLERY_ITEMS.filter((i) => i.category === 'Retreats').length})` },
+    { id: 'Sessions', label: `Sessions (${GALLERY_ITEMS.filter((i) => i.category === 'Sessions').length})` },
+    { id: 'Crystals & Products', label: `Crystals & Products (${GALLERY_ITEMS.filter((i) => i.category === 'Crystals & Products').length})` }
+  ];
 
   const filteredItems = selectedCategory === 'All'
     ? GALLERY_ITEMS
@@ -41,16 +48,16 @@ export const GalleryPreview: React.FC = () => {
           <div className="pt-4 flex flex-wrap items-center justify-center gap-2">
             {categories.map((cat) => (
               <button
-                key={cat}
+                key={cat.id}
                 type="button"
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-1.5 rounded-full text-xs font-sans tracking-wider uppercase transition-all cursor-pointer ${
-                  selectedCategory === cat
+                onClick={() => setSelectedCategory(cat.id)}
+                className={`px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-sans tracking-wider uppercase transition-all cursor-pointer ${
+                  selectedCategory === cat.id
                     ? 'bg-[#3B1E54] text-white dark:bg-[#F5EEFA] dark:text-[#1F0E31] shadow-xs'
                     : 'bg-white/60 dark:bg-white/5 border border-purple-200/60 dark:border-white/10 text-[#5C4573] dark:text-[#C5B4DA] hover:border-purple-300'
                 }`}
               >
-                {cat}
+                {cat.label}
               </button>
             ))}
           </div>
@@ -63,10 +70,10 @@ export const GalleryPreview: React.FC = () => {
               <motion.div
                 layout
                 key={item.id}
-                initial={{ opacity: 0, scale: 0.95 }}
+                initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.35, delay: idx * 0.04 }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.2 }}
                 onClick={() => setActiveImage(item)}
                 className="group aspect-[4/5] rounded-3xl overflow-hidden border border-purple-200/80 dark:border-white/10 bg-white/70 dark:bg-[#1A0E28]/80 relative card-hover shadow-xs cursor-pointer"
               >
