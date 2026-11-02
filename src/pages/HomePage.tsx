@@ -55,7 +55,7 @@ export const HomePage: React.FC = () => {
       {/* 8. Angel Soul Products */}
       <FeaturedProductsSection />
 
-      {/* 9. Retreats (Meet Little Me in Karjat) */}
+      {/* 9. Retreats (Coming Soon / Bookings Opening Soon) */}
       <RetreatsBanner />
 
       {/* 10. Testimonials */}

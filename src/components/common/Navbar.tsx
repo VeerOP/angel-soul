@@ -290,7 +290,7 @@ export const Navbar: React.FC = () => {
                     onClick={() => scrollToSection('retreats')}
                     className="text-left px-3 py-2 rounded-xl text-[#3B2C4A] dark:text-[#E2D5F2] hover:bg-purple-100/60 dark:hover:bg-white/5 font-medium cursor-pointer"
                   >
-                    Retreats (Meet Little Me)
+                    Retreats (Coming Soon)
                   </button>
                   <button
                     type="button"

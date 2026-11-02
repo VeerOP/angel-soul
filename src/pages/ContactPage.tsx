@@ -233,7 +233,7 @@ ${notes ? `• Notes: ${notes}` : ''}`;
                         <option value="Energy Scan (₹7,000)">Energy Scan (₹7,000)</option>
                         <option value="Angel Tarot Reading (From ₹3,500)">Angel Tarot Reading (₹3,500 - ₹5,500)</option>
                         <option value="Transformation Healing">Transformation Healing (Personalised)</option>
-                        <option value="Meet Little Me Retreat (Aamantara Villa, Karjat)">Meet Little Me Retreat • Aamantara Villa, Karjat (₹17,777)</option>
+                        <option value="Upcoming Spiritual Retreats (Waitlist / Coming Soon)">Upcoming Spiritual Retreats (Waitlist / Coming Soon)</option>
                         <option value="Akashic Reading & Healing (₹6,000)">Akashic Reading & Healing (₹6,000)</option>
                         <option value="Akashic Healing (₹5,000)">Akashic Healing (₹5,000)</option>
                         <option value="Chakra Healing (₹3,500)">Chakra Healing (₹3,500)</option>
